@@ -141,6 +141,11 @@
         align-items: center;
         padding: 6rem calc(5rem + var(--ui-inset)) 6rem 5rem;
       }
+
+      /* Invertir orden en módulos pares (texto LEFT, imagen RIGHT) */
+      #s8, #s10 {
+        flex-direction: row-reverse;
+      }
     }
 
     @layer cube {
@@ -545,12 +550,20 @@
       }
 
       .module-label {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
         font-family: var(--font-mono);
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--muted);
-        margin-top: 1rem;
+        opacity: 0.6;
+      }
+
+      section {
+        position: relative;
       }
 
       .cta-back {
