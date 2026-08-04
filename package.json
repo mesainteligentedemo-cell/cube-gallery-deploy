@@ -4,8 +4,7 @@
   "description": "Interactive 3D cube gallery exploring reverse creativity and AI art",
   "main": "index.html",
   "scripts": {
-    "dev": "npx http-server",
-    "build": "echo 'No build needed for static site'"
+    "dev": "npx http-server"
   },
   "keywords": [
     "3d",

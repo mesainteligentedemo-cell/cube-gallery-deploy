@@ -136,87 +136,10 @@
       }
 
       section {
-        height: 100vh;
-        display: flex;
-        align-items: stretch;
-        justify-content: space-between;
-        position: relative;
-        padding: 0;
-        gap: 0;
-      }
-
-      section .image-container {
-        width: 50%;
-        height: 100%;
+        min-height: 100vh;
         display: flex;
         align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        flex-shrink: 0;
-      }
-
-      section .image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      section .text-container {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        flex-shrink: 0;
-      }
-
-      section .module-label {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 30vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #1a1d21;
-        border-top: 1px solid #333;
-      }
-
-      section .module-label .number {
-        font-size: 0.85rem;
-        color: #E5B842;
-        margin-bottom: 1rem;
-        letter-spacing: 2px;
-      }
-
-      section .module-label .name {
-        font-size: 3rem;
-        color: #555;
-        font-weight: 300;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-      }
-
-      section .text-card {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
-      }
-
-      section .text-card.right {
-        margin-inline-start: 0;
-        text-align: center;
-      }
-
-      section .text-card.center {
-        margin-inline: 0;
-        border-left: none;
-        border-top: none !important;
-        text-align: center;
+        padding: 6rem calc(5rem + var(--ui-inset)) 6rem 5rem;
       }
     }
 
@@ -482,7 +405,7 @@
         &.center {
           margin-inline: auto;
           border-left: none;
-          border-top: none !important;
+          border-top: var(--hairline) solid var(--card-border);
           text-align: center;
           max-width: 28.75rem;
 
@@ -565,10 +488,13 @@
       .cta-row {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 0.75rem;
         margin-block-start: 1.75rem;
-        flex-wrap: wrap;
+      }
+
+      .text-card.right .cta-row {
+        justify-content: flex-end;
       }
 
       .cta {
@@ -741,7 +667,6 @@
       }
     }
 
-
     @layer responsive {
       @media (width <= 56.25em) {
         #hud {
@@ -764,48 +689,20 @@
         }
 
         section {
-          height: auto;
           min-height: 150vh;
-          flex-direction: column;
-          align-items: center;
-          padding: 0;
-        }
-
-        section .image-container {
-          width: 100%;
-          height: 50vh;
-          min-height: 300px;
-        }
-
-        section .text-container {
-          width: 100%;
-          height: auto;
-          min-height: 50vh;
-          padding: 2rem 1.5rem 3.5rem;
+          align-items: flex-end;
+          padding: 0 1.5rem 3.5rem;
         }
 
         #s0 {
           min-height: 100vh;
-          flex-direction: row;
-        }
-
-        #s0 .image-container {
-          width: 50%;
-          height: 100%;
-        }
-
-        #s0 .text-container {
-          width: 50%;
-          height: 100%;
+          align-items: center;
           padding: 4rem 1.5rem;
         }
 
         .text-card, .text-card.right, .text-card.center {
           max-width: 100%;
           padding: 1.5rem 1.25rem;
-          border: none;
-          background: transparent;
-          backdrop-filter: none;
         }
 
         .body-text {
@@ -815,13 +712,10 @@
         .stat-row {
           gap: 1.5rem;
           margin-block-start: 1.25rem;
-          justify-content: center;
         }
 
         .cta-row {
           margin-block-start: 1.25rem;
-          justify-content: center;
-          flex-wrap: wrap;
         }
       }
     }
@@ -966,366 +860,305 @@
 
   <div id="scroll_container">
     <section id="s0">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719212/cube-gallery/face-0.webp" alt="VICTOR IA">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="tag">Automatiza Tu Club Vacacional</div>
-          <h1>TU CLUB EN PILOTO<br>AUTOMÁTICO</h1>
-          <p class="body-text">
-            Mientras duermes, tu Club Vacacional vende. Mientras comes, tu equipo se entrena.
-            Victor maneja operación automáticamente. Un solo sistema. Todos los departamentos.
-            Cero intervención manual. Transformamos tu Club Vacacional hoy.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(0)">
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card">
+        <div class="tag">Automatiza Tu Club Vacacional</div>
+        <h1>TU CLUB EN PILOTO<br>AUTOMÁTICO</h1>
+        <p class="body-text">
+          Mientras duermes, tu Club Vacacional vende. Mientras comes, tu equipo se entrena.
+          Victor maneja operación automáticamente. Un solo sistema. Todos los departamentos.
+          Cero intervención manual. Transformamos tu Club Vacacional hoy.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(0)">
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s1">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719216/cube-gallery/face-1.webp" alt="MARKETING IA">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Marketing IA</div>
-          <h2>INVITACIÓN<br>INTELIGENTE</h2>
-          <p class="body-text">
-            Mientras tú haces suposiciones sobre quién puede comprar, Victor analiza:
-            historial de viajes, capacidad crediticia, patrón de gasto, interés real.
-            Solo después, Victor dice: "Invita a este". Menos invitaciones. Más compras.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(1)">
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card right">
+        <div class="h-line"></div>
+        <div class="tag">Marketing IA</div>
+        <h2>INVITACIÓN<br>INTELIGENTE</h2>
+        <p class="body-text">
+          Mientras tú haces suposiciones sobre quién puede comprar, Victor analiza:
+          historial de viajes, capacidad crediticia, patrón de gasto, interés real.
+          Solo después, Victor dice: "Invita a este". Menos invitaciones. Más compras.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(1)">
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s2">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719228/cube-gallery/face-2.webp" alt="HOSTING QR">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Hosting QR</div>
-          <h2>CHECK-IN SIN<br>PAPEL</h2>
-          <p class="body-text">
-            Familia escanea QR desde WhatsApp. Llena sus datos en 60 segundos.
-            Llega al Club Vacacional VTC sin papeleo.
-            Ya tienes: nombre, teléfono, familia, presupuesto. Presentación en ventaja.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(2)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card">
+        <div class="h-line"></div>
+        <div class="tag">Hosting QR</div>
+        <h2>CHECK-IN SIN<br>PAPEL</h2>
+        <p class="body-text">
+          Familia escanea QR desde WhatsApp. Llena sus datos en 60 segundos.
+          Llega al Club Vacacional VTC sin papeleo.
+          Ya tienes: nombre, teléfono, familia, presupuesto. Presentación en ventaja.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(2)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s3">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719231/cube-gallery/face-3.webp" alt="CONTRATOS">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Contratos</div>
-          <h2>CONTRATO QUE<br>EXPLICA SOLO</h2>
-          <p class="body-text">
-            Abogado tradicional: 45 minutos de legalés. Cliente pierde atención a los 5 minutos.
-            Victor IA: 8 minutos. Cliente ENTIENDE cada cláusula. Firma al instante.
-            Velocidad no es falta de rigor. Es claridad.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(3)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card right">
+        <div class="h-line"></div>
+        <div class="tag">Contratos</div>
+        <h2>CONTRATO QUE<br>EXPLICA SOLO</h2>
+        <p class="body-text">
+          Abogado tradicional: 45 minutos de legalés. Cliente pierde atención a los 5 minutos.
+          Victor IA: 8 minutos. Cliente ENTIENDE cada cláusula. Firma al instante.
+          Velocidad no es falta de rigor. Es claridad.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(3)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s4">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719235/cube-gallery/face-4.webp" alt="ADMIN LEGAL">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Admin Legal</div>
-          <h2>LEGAL QUE<br>AUDITA SOLA</h2>
-          <p class="body-text">
-            Victor audita CADA contrato, CADA día automáticamente.
-            Si hay error, Victor lo detecta al instante.
-            Cada modificación requiere autorización biométrica. Cero riesgos legales.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(4)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card">
+        <div class="h-line"></div>
+        <div class="tag">Admin Legal</div>
+        <h2>LEGAL QUE<br>AUDITA SOLA</h2>
+        <p class="body-text">
+          Victor audita CADA contrato, CADA día automáticamente.
+          Si hay error, Victor lo detecta al instante.
+          Cada modificación requiere autorización biométrica. Cero riesgos legales.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(4)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s5">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719239/cube-gallery/face-5.webp" alt="RRHH">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">RRHH</div>
-          <h2>ENTRENA TU<br>EQUIPO AUTOMÁTICO</h2>
-          <p class="body-text">
-            Victor conecta con bases de datos de antecedentes (no pregunta, cero mentiras).
-            Candidato no se ofende. Tú protegido. Luego: VTC /training,
-            16 módulos en 2 semanas. Candidato ya sabe el 80% que necesita.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(5)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card right">
+        <div class="h-line"></div>
+        <div class="tag">RRHH</div>
+        <h2>ENTRENA TU<br>EQUIPO AUTOMÁTICO</h2>
+        <p class="body-text">
+          Victor conecta con bases de datos de antecedentes (no pregunta, cero mentiras).
+          Candidato no se ofende. Tú protegido. Luego: VTC /training,
+          16 módulos en 2 semanas. Candidato ya sabe el 80% que necesita.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(5)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s6">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719243/cube-gallery/face-6.webp" alt="ONBOARDING">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Onboarding</div>
-          <h2>MAYORDOMO<br>24/7</h2>
-          <p class="body-text">
-            Día 0 (firma): "¡Hola, bienvenido al Club Vacacional VTC!"
-            Día 1: "¿Llegó bien a casa?" Día 30: "30 días cliente."
-            50 touchpoints. 5 canales. 0 fricción. Resultado: 98% retención.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(6)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card">
+        <div class="h-line"></div>
+        <div class="tag">Onboarding</div>
+        <h2>MAYORDOMO<br>24/7</h2>
+        <p class="body-text">
+          Día 0 (firma): "¡Hola, bienvenido al Club Vacacional VTC!"
+          Día 1: "¿Llegó bien a casa?" Día 30: "30 días cliente."
+          50 touchpoints. 5 canales. 0 fricción. Resultado: 98% retención.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(6)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s7">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719251/cube-gallery/face-7.webp" alt="CAPACITACIÓN">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Capacitación</div>
-          <h2>CAPACITA Y<br>MEJORA</h2>
-          <p class="body-text">
-            Tu nuevo vendedor accede a VTC /training (16 módulos).
-            Empleado termina sabiendo vender Club Vacacional VTC.
-            Si cierra 8%, Victor crea reentrenamiento personalizado. 2 semanas: +5 puntos.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(7)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card right">
+        <div class="h-line"></div>
+        <div class="tag">Capacitación</div>
+        <h2>CAPACITA Y<br>MEJORA</h2>
+        <p class="body-text">
+          Tu nuevo vendedor accede a VTC /training (16 módulos).
+          Empleado termina sabiendo vender Club Vacacional VTC.
+          Si cierra 8%, Victor crea reentrenamiento personalizado. 2 semanas: +5 puntos.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(7)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s8">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719260/cube-gallery/face-8.webp" alt="FINANZAS">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Finanzas</div>
-          <h2>NÚMEROS EN<br>TIEMPO REAL</h2>
-          <p class="body-text">
-            CEO = control. Control = visibilidad. Visibilidad = números en vivo.
-            Ves qué departamento se atrasa ANTES de que se atrase.
-            Actúas sobre patrones, no sobre eventos.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(8)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card">
+        <div class="h-line"></div>
+        <div class="tag">Finanzas</div>
+        <h2>NÚMEROS EN<br>TIEMPO REAL</h2>
+        <p class="body-text">
+          CEO = control. Control = visibilidad. Visibilidad = números en vivo.
+          Ves qué departamento se atrasa ANTES de que se atrase.
+          Actúas sobre patrones, no sobre eventos.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(8)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s9">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719263/cube-gallery/face-9.webp" alt="SEGURIDAD">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Seguridad</div>
-          <h2>SEGURIDAD<br>BANCARIA</h2>
-          <p class="body-text">
-            Duermes sabiendo: clientes protegidos mejor que en banco.
-            Victor monitorea 24/7. AES-256 + TLS 1.3.
-            Si algo pasara, ya estás resguardado legalmente.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(9)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card right">
+        <div class="h-line"></div>
+        <div class="tag">Seguridad</div>
+        <h2>SEGURIDAD<br>BANCARIA</h2>
+        <p class="body-text">
+          Duermes sabiendo: clientes protegidos mejor que en banco.
+          Victor monitorea 24/7. AES-256 + TLS 1.3.
+          Si algo pasara, ya estás resguardado legalmente.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(9)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s10">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719221/cube-gallery/face-10.webp" alt="ARQUITECTURA">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Arquitectura</div>
-          <h2>TU STACK<br>CONECTADO</h2>
-          <p class="body-text">
-            Hoy: 200 clientes → 2 personas. Mañana: 1000 clientes → siguen siendo 2 personas.
-            Victor conecta todos tus sistemas. Cero trabajo manual.
-            Escalas sin exponenciar costos.
-          </p>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(10)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Más información
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </button>
-          </div>
+      <div class="text-card">
+        <div class="h-line"></div>
+        <div class="tag">Arquitectura</div>
+        <h2>TU STACK<br>CONECTADO</h2>
+        <p class="body-text">
+          Hoy: 200 clientes → 2 personas. Mañana: 1000 clientes → siguen siendo 2 personas.
+          Victor conecta todos tus sistemas. Cero trabajo manual.
+          Escalas sin exponenciar costos.
+        </p>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(10)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Más información
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <section id="s11">
-      <div class="image-container">
-        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719225/cube-gallery/face-11.webp" alt="DASHBOARD">
-      </div>
-      <div class="text-container">
-        <div class="text-card">
-          <div class="h-line"></div>
-          <div class="tag">Dashboard</div>
-          <h2>CONTROL<br>TOTAL</h2>
-          <p class="body-text">
-            CEO ve: revenue, rentabilidad, forecast. OPC ve: leads, conversión, bonos.
-            Gerente ve: equipo, performance, comisiones. 4 roles, 4 dashboards.
-            Cada uno ve exactamente lo que necesita. Cero ruido.
-          </p>
-          <div class="stat-row" style="justify-content: center">
-            <div class="stat">
-              <span class="stat-num">12</span>
-              <span class="stat-label">Módulos</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">360</span>
-              <span class="stat-label">Grados</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">1</span>
-              <span class="stat-label">Solución</span>
-            </div>
+      <div class="text-card right">
+        <div class="h-line"></div>
+        <div class="tag">Dashboard</div>
+        <h2>CONTROL<br>TOTAL</h2>
+        <p class="body-text">
+          CEO ve: revenue, rentabilidad, forecast. OPC ve: leads, conversión, bonos.
+          Gerente ve: equipo, performance, comisiones. 4 roles, 4 dashboards.
+          Cada uno ve exactamente lo que necesita. Cero ruido.
+        </p>
+        <div class="stat-row" style="justify-content: flex-end">
+          <div class="stat">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Módulos</span>
           </div>
-          <div class="cta-row">
-            <button class="cta" onclick="openPopup(11)">
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M11 6H1M6 11L1 6l5-5" />
-              </svg>
-              Ver más
-            </button>
-            <a class="cta" href="#s0">
-              COMENZAR DEMO
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6h10M6 1l5 5-5 5" />
-              </svg>
-            </a>
+          <div class="stat">
+            <span class="stat-num">360</span>
+            <span class="stat-label">Grados</span>
           </div>
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Solución</span>
+          </div>
+        </div>
+        <div class="cta-row">
+          <button class="cta" onclick="openPopup(11)">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11 6H1M6 11L1 6l5-5" />
+            </svg>
+            Ver más
+          </button>
+          <a class="cta" href="#s0">
+            COMENZAR DEMO
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6h10M6 1l5 5-5 5" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- POPUPS MODALES -->
-  <div id="popup-0" class="modal">
+    <!-- POPUPS MODALES -->
+    <div id="popup-0" class="modal">
       <div class="modal-content">
         <button class="modal-close" onclick="closePopup(0)">&times;</button>
         <h2>TU CLUB EN PILOTO AUTOMÁTICO</h2>
@@ -1433,7 +1266,6 @@
       </div>
     </div>
   </div>
-
 
   <div id="credit">
     <a href="#" target="_blank" rel="noopener">VICTOR IA — CLUB VACACIONAL VTC</a>
@@ -1884,361 +1716,141 @@
     });
   </script>
 
-  <!-- DEMO FORM HANDLER -->
-  <script>
-    document.getElementById('demoForm')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = e.target.querySelector('.btn-submit');
-      btn.disabled = true;
-      btn.textContent = 'Procesando...';
+  <!-- EFECTO INTERACTIVO DE TEXTO — ANIME.JS (OPTIMIZADO MOBILE) -->
+  <script type="module">
+    try {
+      // Detectar dispositivo
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isTablet = /iPad|Android(?!.*Mobile)/i.test(navigator.userAgent);
+      const isDesktop = !isMobile && !isTablet;
 
-      try {
-        const formData = new FormData(e.target);
-        const data = {
-          nombre: formData.get('nombre'),
-          apellido: formData.get('apellido'),
-          telefono: formData.get('telefono'),
-          whatsapp: formData.get('whatsapp') || null,
-          email: formData.get('email'),
-          sitio_web: formData.get('sitio_web') || null,
-          num_empleados: formData.get('num_empleados'),
-          empresa_desc: formData.get('empresa_desc') || null
+      // Solo ejecutar en desktop y tablets de alta resolución
+      if (isMobile) {
+        console.log('[TextEffect] Deshabilitado en móviles para optimizar performance');
+        // NO lanzar error - permitir que la página continúe cargando
+      } else {
+        // Solo importar Anime.js si NO es móvil
+        loadTextEffect();
+      }
+
+      async function loadTextEffect() {
+
+      import("https://esm.sh/animejs@4").then(({ animate, createTimer, text, utils }) => {
+        const radius = isTablet ? 30 : 40;
+        const allAnimations = {};
+        let pointerX = 0, pointerY = 0;
+        let isInitialized = false;
+
+        const procesarTextos = () => {
+          try {
+            const selectors = ['h1', 'h2', 'h3', 'p', '.module-title', '.module-text', '.titulo', '.descripcion', '.tag'];
+            const elementos = Array.from(document.querySelectorAll(selectors.join(', '))).slice(0, 100); // Limitar a 100 elementos
+
+            elementos.forEach((elem, elemIdx) => {
+              if (!allAnimations[elemIdx]) {
+                try {
+                  const { chars } = text.split(elem, { chars: true });
+                  if (!chars || chars.length === 0) return;
+
+                  const rects = [];
+                  const animations = [];
+                  let lastRefreshTime = 0;
+
+                  const refreshRects = () => {
+                    const now = Date.now();
+                    if (now - lastRefreshTime < 500) return; // Throttle refreshes
+                    lastRefreshTime = now;
+
+                    try {
+                      chars.forEach(($c, i) => {
+                        if ($c && $c.getBoundingClientRect) {
+                          rects[i] = $c.getBoundingClientRect();
+                        }
+                      });
+                    } catch (e) {
+                      console.error('[TextEffect] Error en refreshRects:', e);
+                    }
+                  };
+
+                  const animateChar = ($c, i) => {
+                    try {
+                      const anim = animations[i];
+                      if (anim && anim.progress < 0.5) return;
+
+                      const rect = rects[i];
+                      if (!rect) return;
+
+                      const dx = pointerX - (rect.left + rect.width * 0.5);
+                      const dy = pointerY - (rect.top + rect.height * 0.5);
+
+                      if (dx * dx + dy * dy <= radius * radius) {
+                        animations[i] = animate($c, {
+                          keyframes: [
+                            { x: utils.random(-radius, radius), y: utils.random(-radius, radius) },
+                            { x: 0, y: 0, ease: 'inOutQuad', delay: 500, duration: 1000 }
+                          ]
+                        });
+                      }
+                    } catch (e) {
+                      console.error('[TextEffect] Error en animateChar:', e);
+                    }
+                  };
+
+                  allAnimations[elemIdx] = { chars, rects, animations, refreshRects, animateChar };
+                  refreshRects();
+                } catch (e) {
+                  console.error('[TextEffect] Error procesando elemento:', e);
+                }
+              }
+            });
+          } catch (e) {
+            console.error('[TextEffect] Error en procesarTextos:', e);
+          }
         };
 
-        const res = await fetch('/api/bookings/create', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        const result = await res.json();
-        if (result.success || res.ok) {
-          alert('✓ Solicitud procesada. Abriendo calendario...');
-          window.location.href = `https://cal.com/demo-mesa-inteligente-9icuas/victor-ia?name=${encodeURIComponent(data.nombre + ' ' + data.apellido)}&email=${encodeURIComponent(data.email)}`;
-        } else {
-          alert('Error: ' + (result.message || 'No pudimos procesar tu solicitud'));
-          btn.disabled = false;
-          btn.textContent = 'Agendar Llamada';
-        }
-      } catch (err) {
-        alert('Error al procesar: ' + err.message);
-        btn.disabled = false;
-        btn.textContent = 'Agendar Llamada';
-      }
-    });
-  </script>
-
-  <!-- Anime.js deshabilitado temporalmente - problemas en iOS. Vercel redeploy en progreso. -->
-
-  <!-- FOOTER COMPLETO CON FORMULARIO CAL.COM -->
-  <footer id="footer-victor-ia" style="background: #111316; border-top: none; padding: 4rem 2rem 2rem; margin-top: 6rem; color: #9CA3AF; font-family: var(--font-display); font-size: 0.9rem; line-height: 1.7;">
-    <style>
-      #footer-victor-ia { background: #111316; color: #9CA3AF; border-top: none; }
-      #footer-victor-ia a { color: #E5B842; text-decoration: none; transition: color 0.2s; }
-      #footer-victor-ia a:hover { color: #F3D273; text-decoration: underline; }
-      #footer-victor-ia .footer-container { max-width: 1200px; margin: 0 auto; }
-      #footer-victor-ia .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-      #footer-victor-ia .footer-section h3 { color: #E5B842; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
-      #footer-victor-ia .footer-section ul { list-style: none; padding: 0; }
-      #footer-victor-ia .footer-section li { margin-bottom: 0.75rem; }
-      #footer-victor-ia .footer-contact { display: flex; flex-direction: column; gap: 1rem; }
-      #footer-victor-ia .footer-contact strong { color: #FFFFFF; display: block; margin-bottom: 0.3rem; }
-      #footer-victor-ia .footer-form { background: #1B1D22; border: 1px solid #2D313A; border-radius: 8px; padding: 2rem; }
-      #footer-victor-ia .booking-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
-      @media (max-width: 768px) { #footer-victor-ia .booking-form-grid { grid-template-columns: 1fr; } }
-      #footer-victor-ia .booking-form-grid.full-width { grid-template-columns: 1fr; }
-      #footer-victor-ia .footer-form input, #footer-victor-ia .footer-form select, #footer-victor-ia .footer-form textarea { width: 100%; padding: 0.8rem 1rem; background: #111316; border: 1px solid #2D313A; border-radius: 6px; color: #FFFFFF; font-family: inherit; font-size: 0.9rem; }
-      #footer-victor-ia .footer-form input:focus, #footer-victor-ia .footer-form select:focus, #footer-victor-ia .footer-form textarea:focus { outline: none; border-color: #E5B842; box-shadow: 0 0 0 2px rgba(229, 184, 66, 0.1); }
-      #footer-victor-ia .footer-form input.error, #footer-victor-ia .footer-form textarea.error { border-color: #FF3D00; }
-      #footer-victor-ia .booking-error { font-size: 0.75rem; color: #FF3D00; margin-top: 0.3rem; display: none; }
-      #footer-victor-ia .booking-error.show { display: block; }
-      #footer-victor-ia .booking-counter { font-size: 0.75rem; color: #9CA3AF; margin-top: 0.3rem; }
-      #footer-victor-ia .footer-form button { background: #E5B842; color: #111316; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
-      #footer-victor-ia .footer-form button:hover:not(:disabled) { background: #F3D273; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(229, 184, 66, 0.2); }
-      #footer-victor-ia .footer-form button:disabled { opacity: 0.5; cursor: not-allowed; }
-      #footer-victor-ia .footer-msg { font-size: 0.85rem; color: #00E676; margin-bottom: 1rem; display: none; padding: 0.75rem; border-radius: 4px; background: rgba(0, 230, 118, 0.1); }
-      #footer-victor-ia .footer-msg.error { color: #FF3D00; background: rgba(255, 61, 0, 0.1); }
-      #footer-victor-ia .footer-msg.success { color: #00E676; }
-      #footer-victor-ia .booking-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 9999; align-items: center; justify-content: center; }
-      #footer-victor-ia .booking-modal.show { display: flex; }
-      #footer-victor-ia .booking-modal-content { background: #1B1D22; border: 1px solid #2D313A; border-radius: 8px; padding: 2rem; max-width: 400px; text-align: center; animation: slideIn 0.3s ease; }
-      @keyframes slideIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-      #footer-victor-ia .booking-modal-content h2 { color: #E5B842; margin: 0 0 1rem; }
-      #footer-victor-ia .booking-modal-content p { color: #FFFFFF; line-height: 1.6; margin: 0 0 1.5rem; }
-      #footer-victor-ia .booking-modal-content button { background: #E5B842; color: #111316; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
-      #footer-victor-ia .booking-modal-content button:hover { background: #F3D273; }
-      #footer-victor-ia .footer-bottom { border-top: none !important; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
-      #footer-victor-ia .footer-bottom-left { display: flex; gap: 2rem; flex-wrap: wrap; }
-      @media (max-width: 768px) {
-        #footer-victor-ia { padding: 2.5rem 1.5rem 1.5rem; }
-        #footer-victor-ia .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-        #footer-victor-ia .footer-bottom { flex-direction: column; align-items: flex-start; }
-      }
-    </style>
-
-    <div class="footer-container">
-      <div class="footer-grid">
-        <!-- LEGAL -->
-        <div class="footer-section">
-          <h3>Legal (México)</h3>
-          <ul>
-            <li><a href="/legal/terminos-condiciones.html" target="_blank">Términos y Condiciones</a></li>
-            <li><a href="/legal/politica-privacidad.html" target="_blank">Política de Privacidad</a></li>
-            <li><a href="/legal/aviso-privacidad-lpdp.html" target="_blank">Aviso de Privacidad (LPDP)</a></li>
-            <li><a href="/legal/avisos-legales.html" target="_blank">Avisos Legales</a></li>
-          </ul>
-        </div>
-
-        <!-- CONTACTO -->
-        <div class="footer-section">
-          <h3>Contacto e Información</h3>
-          <div class="footer-contact">
-            <div>
-              <strong>Empresa</strong>
-              Influence IA SA de CV
-            </div>
-            <div>
-              <strong>Email</strong>
-              <a href="mailto:info@victor-ia.com.mx">info@victor-ia.com.mx</a>
-            </div>
-            <div>
-              <strong>Teléfono</strong>
-              <a href="tel:+529842353159">+52 984-235-3159</a>
-            </div>
-            <div>
-              <strong>Otros Servicios</strong>
-              <a href="https://victor-ia.xyz" target="_blank">victor-ia.xyz</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BOOKING FORM CAL.COM -->
-        <div class="footer-section">
-          <h3>Agendar Videollamada</h3>
-          <div class="footer-form">
-            <form id="booking-form">
-              <div class="footer-msg" id="booking-msg"></div>
-              <div class="booking-form-grid">
-                <input type="text" id="booking-nombre" placeholder="Nombre" required>
-                <input type="text" id="booking-apellido" placeholder="Apellido" required>
-              </div>
-              <div class="booking-form-grid">
-                <input type="tel" id="booking-tel" placeholder="Teléfono" required>
-                <input type="tel" id="booking-whatsapp" placeholder="WhatsApp">
-              </div>
-              <div class="booking-form-grid full-width">
-                <input type="email" id="booking-email" placeholder="Email" required>
-              </div>
-              <div class="booking-form-grid full-width">
-                <input type="url" id="booking-web" placeholder="Sitio web (opcional)">
-              </div>
-              <div class="booking-form-grid full-width">
-                <select id="booking-empleados" required>
-                  <option value="">Número de empleados</option>
-                  <option value="1-10">1 - 10</option>
-                  <option value="11-50">11 - 50</option>
-                  <option value="51-250">51 - 250</option>
-                  <option value="251+">251+</option>
-                </select>
-              </div>
-              <div class="booking-form-grid full-width">
-                <textarea id="booking-empresa" placeholder="Cuéntanos acerca de tu empresa" maxlength="500" rows="3"></textarea>
-                <div class="booking-counter"><span id="booking-count">0</span> / 500</div>
-              </div>
-              <button type="submit" id="booking-btn">Agendar Videollamada</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- BOTTOM -->
-      <div class="footer-bottom">
-        <div class="footer-bottom-left">
-          <div style="font-size: 0.85rem;">
-            © 2026 Victor IA — Influence IA SA de CV<br>
-            Todos los derechos reservados.
-          </div>
-        </div>
-        <div style="text-align: right; font-size: 0.85rem;">
-          <a href="https://victor-ia.xyz" target="_blank" style="color: #E5B842;">Victor IA Website</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modal de confirmación -->
-  <div class="booking-modal" id="booking-modal">
-    <div class="booking-modal-content">
-      <h2>Videollamada Agendada</h2>
-      <p id="modal-message">Tu solicitud ha sido enviada. Serás redirigido al calendario para elegir fecha y hora.</p>
-      <button onclick="window.location.href='https://cal.com/demo-mesa-inteligente-9icuas/victor-ia'; document.getElementById('booking-modal').classList.remove('show');">Aceptar</button>
-    </div>
-  </div>
-
-  <script>
-    // Booking Form Handler para Cal.com
-    (function() {
-      const form = document.getElementById('booking-form');
-      const msg = document.getElementById('booking-msg');
-      const modal = document.getElementById('booking-modal');
-      const empresaField = document.getElementById('booking-empresa');
-      const countSpan = document.getElementById('booking-count');
-
-      if (!form) return;
-
-      // Contador de caracteres
-      empresaField.addEventListener('input', function() {
-        countSpan.textContent = this.value.length;
-      });
-
-      // Validación de teléfono: formato MX/USA
-      function validatePhone(phone) {
-        if (!phone) return false;
-        const cleaned = phone.replace(/\D/g, '');
-        return cleaned.length >= 10;
-      }
-
-      // Validación de email
-      function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }
-
-      // Limpiar teléfono
-      function cleanPhone(phone) {
-        return phone.replace(/\D/g, '');
-      }
-
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        // Obtener valores
-        const nombre = document.getElementById('booking-nombre').value.trim();
-        const apellido = document.getElementById('booking-apellido').value.trim();
-        const tel = document.getElementById('booking-tel').value.trim();
-        const whatsapp = document.getElementById('booking-whatsapp').value.trim();
-        const email = document.getElementById('booking-email').value.trim();
-        const web = document.getElementById('booking-web').value.trim();
-        const empleados = document.getElementById('booking-empleados').value;
-        const empresa = document.getElementById('booking-empresa').value.trim();
-
-        // Validación
-        let hasError = false;
-        msg.classList.remove('error', 'success', 'show');
-
-        if (!nombre) {
-          document.getElementById('booking-nombre').classList.add('error');
-          hasError = true;
-        } else {
-          document.getElementById('booking-nombre').classList.remove('error');
-        }
-
-        if (!apellido) {
-          document.getElementById('booking-apellido').classList.add('error');
-          hasError = true;
-        } else {
-          document.getElementById('booking-apellido').classList.remove('error');
-        }
-
-        if (!validatePhone(tel)) {
-          document.getElementById('booking-tel').classList.add('error');
-          msg.textContent = 'El teléfono debe tener al menos 10 dígitos.';
-          hasError = true;
-        } else {
-          document.getElementById('booking-tel').classList.remove('error');
-        }
-
-        if (whatsapp && !validatePhone(whatsapp)) {
-          document.getElementById('booking-whatsapp').classList.add('error');
-          msg.textContent = 'El WhatsApp debe tener al menos 10 dígitos.';
-          hasError = true;
-        } else {
-          document.getElementById('booking-whatsapp').classList.remove('error');
-        }
-
-        if (!validateEmail(email)) {
-          document.getElementById('booking-email').classList.add('error');
-          msg.textContent = 'Por favor escribe un email válido.';
-          hasError = true;
-        } else {
-          document.getElementById('booking-email').classList.remove('error');
-        }
-
-        if (!empleados) {
-          document.getElementById('booking-empleados').classList.add('error');
-          hasError = true;
-        } else {
-          document.getElementById('booking-empleados').classList.remove('error');
-        }
-
-        if (hasError) {
-          msg.classList.add('error', 'show');
-          if (!msg.textContent) msg.textContent = 'Por favor completa todos los campos requeridos correctamente.';
-          return;
-        }
-
-        // Desabilitar botón y mostrar loading
-        const btn = document.getElementById('booking-btn');
-        btn.disabled = true;
-        btn.textContent = 'Procesando...';
-
         try {
-          // POST a /api/bookings/create
-          const response = await fetch('/api/bookings/create', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              nombre,
-              apellido,
-              telefono: cleanPhone(tel),
-              whatsapp: whatsapp ? cleanPhone(whatsapp) : null,
-              email,
-              sitio_web: web || null,
-              num_empleados: empleados,
-              empresa
-            })
-          });
+          procesarTextos();
+          if (!isInitialized) {
+            isInitialized = true;
 
-          const data = await response.json();
+            document.addEventListener('pointermove', e => {
+              pointerX = e.clientX;
+              pointerY = e.clientY;
+            }, { passive: true });
 
-          if (!response.ok) throw new Error(data.message || 'Error al procesar la solicitud');
+            createTimer({
+              onUpdate: () => {
+                try {
+                  Object.values(allAnimations).forEach(data => {
+                    data.chars.forEach((char, i) => data.animateChar(char, i));
+                  });
+                } catch (e) {
+                  console.error('[TextEffect] Error en timer update:', e);
+                }
+              }
+            });
 
-          // Éxito: mostrar modal y preparar redirección a cal.com
-          msg.classList.remove('error');
-          msg.classList.add('success', 'show');
-          msg.textContent = '✓ Solicitud procesada. Se abrirá el calendario.';
-          form.reset();
-          countSpan.textContent = '0';
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                Object.values(allAnimations).forEach(data => data.refreshRects());
+              }, 100);
+            }, { passive: true });
 
-          // Preparar URL de cal.com con pre-fill
-          const calUrl = `https://cal.com/demo-mesa-inteligente-9icuas/victor-ia?name=${encodeURIComponent(nombre + ' ' + apellido)}&email=${encodeURIComponent(email)}`;
-
-          // Mostrar modal y redirigir después de 2 segundos
-          setTimeout(function() {
-            document.getElementById('modal-message').textContent = `Hola ${nombre}, tu solicitud está lista. Serás redirigido al calendario.`;
-            modal.classList.add('show');
-            setTimeout(function() {
-              window.location.href = calUrl;
-            }, 1500);
-          }, 800);
-
-        } catch (err) {
-          msg.classList.add('error', 'show');
-          msg.textContent = 'Error: ' + (err.message || 'No pudimos procesar tu solicitud. Intenta de nuevo.');
-        } finally {
-          btn.disabled = false;
-          btn.textContent = 'Agendar Videollamada';
+            window.addEventListener('resize', () => {
+              Object.values(allAnimations).forEach(data => data.refreshRects());
+            });
+          }
+        } catch (e) {
+          console.error('[TextEffect] Error crítico:', e);
         }
+      }).catch(e => {
+        console.error('[TextEffect] Error cargando Anime.js:', e);
       });
-
-      // Cerrar modal si se hace clic afuera
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.classList.remove('show');
-        }
-      });
-    })();
+    } catch (e) {
+      console.log('[TextEffect] Inicialización deshabilitada:', e.message);
+    }
   </script>
-
 </body>
 </html>
