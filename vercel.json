@@ -1,7 +1,6 @@
 {
   "name": "cube-gallery-bad-art",
   "version": 2,
-  "public": true,
   "builds": [
     {
       "src": "index.html",
