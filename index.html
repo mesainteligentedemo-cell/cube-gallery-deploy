@@ -3,7 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bad Art — Cube Gallery</title>
+  <title>Victor IA — Automatización Club Vacacional VTC con IA</title>
+
+  <!-- SEO BÁSICO -->
+  <meta name="description" content="Victor IA automatiza Club Vacacional VTC con agente IA bilingüe. 12 módulos de automatización, capacitación 24/7, reportes automáticos, integración completa.">
+
+  <!-- OPEN GRAPH (WhatsApp, Messenger, Instagram, LinkedIn, etc.) -->
+  <meta property="og:title" content="Victor IA — Automatización Club Vacacional VTC">
+  <meta property="og:description" content="Plataforma IA para Club Vacacional VTC. 12 módulos de automatización, capacitación 24/7, reportes automáticos, integración completa.">
+  <meta property="og:image" content="https://res.cloudinary.com/dxy9t8qur/image/upload/w_1200,h_630,c_fill,q_80,f_png/v1785702188/victor-ia-hero_r4g43j.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://www.victor-ia.com.mx/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Victor IA">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Victor IA — Automatización Club Vacacional VTC">
+  <meta name="twitter:description" content="Agente IA para Club Vacacional VTC. Automatización de 12 módulos, capacitación 24/7, dashboards en tiempo real.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dxy9t8qur/image/upload/w_1200,h_630,c_fill,q_80,f_png/v1785702188/victor-ia-hero_r4g43j.png">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🤖</text></svg>">
+
+  <!-- SCHEMA.ORG -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Victor IA",
+    "url": "https://www.victor-ia.com.mx",
+    "logo": "https://res.cloudinary.com/dxy9t8qur/image/upload/w_1200,h_630,c_fill,q_80,f_png/v1785702188/victor-ia-hero_r4g43j.png",
+    "description": "Plataforma de automatización IA para capacitación timeshare",
+    "sameAs": [
+      "https://www.instagram.com/victor-ia",
+      "https://www.linkedin.com/company/victor-ia"
+    ]
+  }
+  </script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap");
 
@@ -23,26 +61,42 @@
       :root {
         color-scheme: dark;
 
-        --dark-bg: #1c1814;
-        --dark-fg: #ede8df;
-        --dark-muted: #8a7b6e;
-        --light-bg: #f0ece3;
-        --light-fg: #0d0d14;
-        --light-muted: #9a9aaa;
-        --accent-dark: #d4a84b;
-        --accent-light: #3a6e00;
+        /* VTC Elite Training - Fondos */
+        --bg-main: #111316;
+        --bg-card: #1B1D22;
+        --bg-card-hover: #23262D;
+        --border-color: #2D313A;
 
-        --bg: var(--dark-bg);
-        --fg: var(--dark-fg);
-        --muted: var(--dark-muted);
-        --accent: var(--accent-dark);
+        /* VTC Elite Training - Marca y Acentos */
+        --primary-gold: #E5B842;
+        --primary-gold-light: #F3D273;
+        --text-white: #FFFFFF;
+        --text-muted: #9CA3AF;
 
-        --font-display: "Bebas Neue", sans-serif;
-        --font-mono: "DM Mono", monospace;
+        /* VTC Elite Training - Status */
+        --status-success: #00E676;
+        --status-warning: #FF9100;
+        --status-danger: #FF3D00;
+        --status-cyan: #00E5FF;
+
+        /* Mapeo a variables antiguas para compatibilidad */
+        --dark-bg: var(--bg-main);
+        --dark-fg: var(--text-white);
+        --dark-muted: var(--text-muted);
+        --accent-dark: var(--primary-gold);
+        --accent-light: var(--status-success);
+
+        --bg: var(--bg-main);
+        --fg: var(--text-white);
+        --muted: var(--text-muted);
+        --accent: var(--primary-gold);
+
+        --font-display: "Inter", "Plus Jakarta Sans", "Montserrat", sans-serif;
+        --font-mono: "Inter", sans-serif;
         --hairline: 0.0625rem;
         --ui-inset: 2rem;
-        --card-bg: rgba(28, 24, 20, 0.82);
-        --card-border: rgba(212, 168, 75, 0.2);
+        --card-bg: rgba(27, 29, 34, 0.95);
+        --card-border: rgba(229, 184, 66, 0.15);
         --nav-x: calc(var(--ui-inset) + 0.125rem);
         --reveal-offset: 0.625rem;
         --reveal-duration: 0.5s;
@@ -58,7 +112,7 @@
       body {
         background: var(--bg);
         color: var(--fg);
-        font-family: var(--font-mono);
+        font-family: var(--font-display);
         overflow-x: hidden;
         transition: background 0.3s ease, color 0.3s ease;
       }
@@ -82,10 +136,87 @@
       }
 
       section {
-        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        position: relative;
+        padding: 0;
+        gap: 0;
+      }
+
+      section .image-container {
+        width: 50%;
+        height: 100%;
         display: flex;
         align-items: center;
-        padding: 6rem calc(5rem + var(--ui-inset)) 6rem 5rem;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      section .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      section .text-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        flex-shrink: 0;
+      }
+
+      section .module-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #1a1d21;
+        border-top: 1px solid #333;
+      }
+
+      section .module-label .number {
+        font-size: 0.85rem;
+        color: #E5B842;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+
+      section .module-label .name {
+        font-size: 3rem;
+        color: #555;
+        font-weight: 300;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+
+      section .text-card {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      section .text-card.right {
+        margin-inline-start: 0;
+        text-align: center;
+      }
+
+      section .text-card.center {
+        margin-inline: 0;
+        border-left: none;
+        border-top: none !important;
+        text-align: center;
       }
     }
 
@@ -280,9 +411,9 @@
 
       #face_caption {
         position: fixed;
-        bottom: var(--ui-inset);
+        bottom: 14%;
         left: 50%;
-        translate: -50% 0;
+        translate: -50% 50%;
         z-index: var(--z-ui);
         text-align: center;
         pointer-events: none;
@@ -299,11 +430,12 @@
 
       #face_caption_name {
         font-family: var(--font-display);
-        font-size: clamp(1.8rem, 5vw, 3.5rem);
+        font-size: clamp(1.2rem, 3.5vw, 2.4rem);
         letter-spacing: 0.08em;
         color: var(--muted);
         opacity: 0.5;
         line-height: 1;
+        white-space: nowrap;
       }
 
       #credit {
@@ -329,8 +461,9 @@
       .text-card {
         max-width: 23.75rem;
         padding: 2.25rem 2rem;
-        background: var(--card-bg);
-        border-left: var(--hairline) solid var(--card-border);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
         backdrop-filter: blur(6px) saturate(120%);
         -webkit-backdrop-filter: blur(6px) saturate(120%);
         overflow: hidden;
@@ -338,8 +471,6 @@
 
         &.right {
           margin-inline-start: auto;
-          border-left: none;
-          border-right: var(--hairline) solid var(--card-border);
           text-align: right;
 
           .h-line {
@@ -351,7 +482,7 @@
         &.center {
           margin-inline: auto;
           border-left: none;
-          border-top: var(--hairline) solid var(--card-border);
+          border-top: none !important;
           text-align: center;
           max-width: 28.75rem;
 
@@ -363,7 +494,7 @@
       }
 
       .tag {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
         color: var(--accent);
@@ -378,10 +509,15 @@
       }
 
       h1 {
-        font-size: clamp(3rem, 8vw, 6.5rem);
+        font-size: clamp(1.4rem, 4vw, 2.6rem);
       }
+
+      #s0 h1 {
+        font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+      }
+
       h2 {
-        font-size: clamp(2.2rem, 5vw, 4rem);
+        font-size: clamp(1.4rem, 3.5vw, 2.4rem);
       }
 
       .body-text {
@@ -429,13 +565,10 @@
       .cta-row {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 0.75rem;
         margin-block-start: 1.75rem;
-      }
-
-      .text-card.right .cta-row {
-        justify-content: flex-end;
+        flex-wrap: wrap;
       }
 
       .cta {
@@ -546,11 +679,11 @@
       :root[data-theme="light"] {
         color-scheme: light;
         --bg: var(--light-bg);
-        --fg: var(--light-fg);
-        --muted: var(--light-muted);
-        --accent: var(--accent-light);
-        --card-bg: rgba(240, 236, 227, 0.08);
-        --card-border: rgba(58, 110, 0, 0.14);
+        --fg: #ffffff;
+        --muted: #c9c9d4;
+        --accent: #d4a84b;
+        --card-bg: rgba(20, 18, 16, 0.92);
+        --card-border: rgba(212, 168, 75, 0.3);
 
         .face {
           background: repeating-linear-gradient(
@@ -574,6 +707,22 @@
           color: rgba(0, 0, 0, 0.07);
         }
 
+        .body-text {
+          color: #f5f1e8;
+        }
+
+        .tag {
+          color: #d4a84b;
+        }
+
+        .stat-label {
+          color: #c9c9d4;
+        }
+
+        h1, h2 {
+          color: #ffffff;
+        }
+
         #theme_toggle svg {
           color: var(--fg);
         }
@@ -591,6 +740,7 @@
         }
       }
     }
+
 
     @layer responsive {
       @media (width <= 56.25em) {
@@ -610,24 +760,52 @@
         }
 
         #face_caption {
-          bottom: 1rem;
+          bottom: 14%;
         }
 
         section {
+          height: auto;
           min-height: 150vh;
-          align-items: flex-end;
-          padding: 0 1.5rem 3.5rem;
+          flex-direction: column;
+          align-items: center;
+          padding: 0;
+        }
+
+        section .image-container {
+          width: 100%;
+          height: 50vh;
+          min-height: 300px;
+        }
+
+        section .text-container {
+          width: 100%;
+          height: auto;
+          min-height: 50vh;
+          padding: 2rem 1.5rem 3.5rem;
         }
 
         #s0 {
           min-height: 100vh;
-          align-items: center;
+          flex-direction: row;
+        }
+
+        #s0 .image-container {
+          width: 50%;
+          height: 100%;
+        }
+
+        #s0 .text-container {
+          width: 50%;
+          height: 100%;
           padding: 4rem 1.5rem;
         }
 
         .text-card, .text-card.right, .text-card.center {
           max-width: 100%;
           padding: 1.5rem 1.25rem;
+          border: none;
+          background: transparent;
+          backdrop-filter: none;
         }
 
         .body-text {
@@ -637,11 +815,101 @@
         .stat-row {
           gap: 1.5rem;
           margin-block-start: 1.25rem;
+          justify-content: center;
         }
 
         .cta-row {
           margin-block-start: 1.25rem;
+          justify-content: center;
+          flex-wrap: wrap;
         }
+      }
+    }
+
+    /* MODAL STYLES */
+    @layer ui {
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        animation: slideIn 0.3s ease-in-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .modal-content h2 {
+        font-size: 1.8rem;
+        color: var(--fg);
+        margin-bottom: 1rem;
+      }
+
+      .modal-text {
+        font-size: 0.85rem;
+        line-height: 1.8;
+        color: color-mix(in srgb, var(--fg) 75%, transparent);
+        margin-bottom: 1.5rem;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--accent);
+        cursor: pointer;
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-close:hover {
+        opacity: 0.7;
       }
     }
   </style>
@@ -663,7 +931,7 @@
     <div class="progress-bar">
       <div class="progress-fill" id="prog_fill"></div>
     </div>
-    <div class="scene-label" id="scene_name">MULTIPLICA</div>
+    <div class="scene-label" id="scene_name">VICTOR IA</div>
   </div>
 
   <button id="theme_toggle" aria-label="Toggle light/dark mode">
@@ -693,342 +961,515 @@
 
   <div id="face_caption">
     <div id="face_caption_num">01</div>
-    <div id="face_caption_name">MULTIPLICA</div>
+    <div id="face_caption_name">VICTOR IA</div>
   </div>
 
   <div id="scroll_container">
     <section id="s0">
-      <div class="text-card">
-        <div class="tag">Victor IA — Time Share</div>
-        <h1>ESCALA<br>MIENTRAS<br>DUERMES</h1>
-        <p class="body-text">
-          Automatiza toda tu operación de timeshare. Nuestros agentes IA manejan desde captación
-          hasta retención completa, reducen costos 70%.
-          Tu equipo enfocado solo en cerrar. Ves cada métrica en tiempo real, controlas
-          todo el proceso y expande ingresos recurrentes mientras duermes.
-        </p>
-        <div class="cta-row">
-          <a class="cta" href="#s1">
-            Comienza Ahora
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719212/cube-gallery/face-0.webp" alt="VICTOR IA">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="tag">Automatiza Tu Club Vacacional</div>
+          <h1>TU CLUB EN PILOTO<br>AUTOMÁTICO</h1>
+          <p class="body-text">
+            Mientras duermes, tu Club Vacacional vende. Mientras comes, tu equipo se entrena.
+            Victor maneja operación automáticamente. Un solo sistema. Todos los departamentos.
+            Cero intervención manual. Transformamos tu Club Vacacional hoy.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(0)">
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s1">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">01 — Automatización</div>
-        <h2>MÁQUINAS<br>QUE VENDEN</h2>
-        <p class="body-text">
-          Tu equipo descansa. Nuestros agentes IA llaman, califican, cierran. 10+ horas semanales recuperadas por rep.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s0">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s2">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719216/cube-gallery/face-1.webp" alt="MARKETING IA">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Marketing IA</div>
+          <h2>INVITACIÓN<br>INTELIGENTE</h2>
+          <p class="body-text">
+            Mientras tú haces suposiciones sobre quién puede comprar, Victor analiza:
+            historial de viajes, capacidad crediticia, patrón de gasto, interés real.
+            Solo después, Victor dice: "Invita a este". Menos invitaciones. Más compras.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(1)">
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s2">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">02 — Tiempo Real</div>
-        <h2>VERLO TODO<br>AL INSTANTE</h2>
-        <p class="body-text">
-          Cada movimiento en pantalla. Decisiones informadas al instante. Control sin ansiedad.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s1">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s3">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719228/cube-gallery/face-2.webp" alt="HOSTING QR">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Hosting QR</div>
+          <h2>CHECK-IN SIN<br>PAPEL</h2>
+          <p class="body-text">
+            Familia escanea QR desde WhatsApp. Llena sus datos en 60 segundos.
+            Llega al Club Vacacional VTC sin papeleo.
+            Ya tienes: nombre, teléfono, familia, presupuesto. Presentación en ventaja.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(2)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s3">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">03 — IA Coaching</div>
-        <h2>MEJORAN<br>MIENTRAS VENDEN</h2>
-        <p class="body-text">
-          Feedback inmediato post-call. Tus reps evolucionan solos. Skills afiladas en semanas, no meses.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s2">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s4">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719231/cube-gallery/face-3.webp" alt="CONTRATOS">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Contratos</div>
+          <h2>CONTRATO QUE<br>EXPLICA SOLO</h2>
+          <p class="body-text">
+            Abogado tradicional: 45 minutos de legalés. Cliente pierde atención a los 5 minutos.
+            Victor IA: 8 minutos. Cliente ENTIENDE cada cláusula. Firma al instante.
+            Velocidad no es falta de rigor. Es claridad.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(3)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s4">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">04 — Integración</div>
-        <h2>UNA SOLA<br>VERDAD</h2>
-        <p class="body-text">
-          HubSpot, Salesforce, Slack, Gmail en un lugar. Adiós fragmentación, hola data limpia.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s3">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s5">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719235/cube-gallery/face-4.webp" alt="ADMIN LEGAL">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Admin Legal</div>
+          <h2>LEGAL QUE<br>AUDITA SOLA</h2>
+          <p class="body-text">
+            Victor audita CADA contrato, CADA día automáticamente.
+            Si hay error, Victor lo detecta al instante.
+            Cada modificación requiere autorización biométrica. Cero riesgos legales.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(4)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s5">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">05 — Escalabilidad</div>
-        <h2>CRECE SIN<br>PERDER ORDEN</h2>
-        <p class="body-text">
-          De 1 rep a 100. Sin caos, sin fricción. Sistema que escala contigo.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s4">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s6">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719239/cube-gallery/face-5.webp" alt="RRHH">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">RRHH</div>
+          <h2>ENTRENA TU<br>EQUIPO AUTOMÁTICO</h2>
+          <p class="body-text">
+            Victor conecta con bases de datos de antecedentes (no pregunta, cero mentiras).
+            Candidato no se ofende. Tú protegido. Luego: VTC /training,
+            16 módulos en 2 semanas. Candidato ya sabe el 80% que necesita.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(5)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s6">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">06 — Analytics</div>
-        <h2>DATOS QUE<br>VENDEN</h2>
-        <p class="body-text">
-          KPIs en vivo. Benchmarks vs industria. Reportes que cierren, no que cansen.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s5">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s7">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719243/cube-gallery/face-6.webp" alt="ONBOARDING">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Onboarding</div>
+          <h2>MAYORDOMO<br>24/7</h2>
+          <p class="body-text">
+            Día 0 (firma): "¡Hola, bienvenido al Club Vacacional VTC!"
+            Día 1: "¿Llegó bien a casa?" Día 30: "30 días cliente."
+            50 touchpoints. 5 canales. 0 fricción. Resultado: 98% retención.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(6)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s7">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">07 — Seguridad</div>
-        <h2>INTOCABLE</h2>
-        <p class="body-text">
-          Encriptación E2E. Roles granulares. Auditoría total. Tu data, tu regla, duerme tranquilo.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s6">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s8">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719251/cube-gallery/face-7.webp" alt="CAPACITACIÓN">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Capacitación</div>
+          <h2>CAPACITA Y<br>MEJORA</h2>
+          <p class="body-text">
+            Tu nuevo vendedor accede a VTC /training (16 módulos).
+            Empleado termina sabiendo vender Club Vacacional VTC.
+            Si cierra 8%, Victor crea reentrenamiento personalizado. 2 semanas: +5 puntos.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(7)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s8">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">08 — Compliance</div>
-        <h2>CLIENTES<br>CONFÍAN</h2>
-        <p class="body-text">
-          SOC 2, GDPR, HIPAA ready. Las certs que tus clientes exigen. Sin auditorías sorpresa.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s7">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s9">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719260/cube-gallery/face-8.webp" alt="FINANZAS">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Finanzas</div>
+          <h2>NÚMEROS EN<br>TIEMPO REAL</h2>
+          <p class="body-text">
+            CEO = control. Control = visibilidad. Visibilidad = números en vivo.
+            Ves qué departamento se atrasa ANTES de que se atrase.
+            Actúas sobre patrones, no sobre eventos.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(8)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s9">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">09 — Customización</div>
-        <h2>HECHO A TI</h2>
-        <p class="body-text">
-          Workflows sin código. Tu branding, tu look. Nada genérico. Tu marca, tu poder.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s8">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s10">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719263/cube-gallery/face-9.webp" alt="SEGURIDAD">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Seguridad</div>
+          <h2>SEGURIDAD<br>BANCARIA</h2>
+          <p class="body-text">
+            Duermes sabiendo: clientes protegidos mejor que en banco.
+            Victor monitorea 24/7. AES-256 + TLS 1.3.
+            Si algo pasara, ya estás resguardado legalmente.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(9)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s10">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">10 — Onboarding</div>
-        <h2>LISTA HOY</h2>
-        <p class="body-text">
-          Setup intuitivo. Videos guía. Soporte 24/7. Tu equipo productivo mañana.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s9">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s11">
-            Explorar
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719221/cube-gallery/face-10.webp" alt="ARQUITECTURA">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Arquitectura</div>
+          <h2>TU STACK<br>CONECTADO</h2>
+          <p class="body-text">
+            Hoy: 200 clientes → 2 personas. Mañana: 1000 clientes → siguen siendo 2 personas.
+            Victor conecta todos tus sistemas. Cero trabajo manual.
+            Escalas sin exponenciar costos.
+          </p>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(10)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Más información
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="s11">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">11 — ROI Tracking</div>
-        <h2>JUSTIFICADO</h2>
-        <p class="body-text">
-          Dashboard ROI. Proyecciones precisas. Cierra presupuesto con números reales, sin cuestionamientos.
-        </p>
-        <div class="cta-row">
-          <a class="cta-back" href="#s10">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Atrás
-          </a>
-          <a class="cta" href="#s0">
-            Comenzar de nuevo
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+      <div class="image-container">
+        <img src="https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719225/cube-gallery/face-11.webp" alt="DASHBOARD">
+      </div>
+      <div class="text-container">
+        <div class="text-card">
+          <div class="h-line"></div>
+          <div class="tag">Dashboard</div>
+          <h2>CONTROL<br>TOTAL</h2>
+          <p class="body-text">
+            CEO ve: revenue, rentabilidad, forecast. OPC ve: leads, conversión, bonos.
+            Gerente ve: equipo, performance, comisiones. 4 roles, 4 dashboards.
+            Cada uno ve exactamente lo que necesita. Cero ruido.
+          </p>
+          <div class="stat-row" style="justify-content: center">
+            <div class="stat">
+              <span class="stat-num">12</span>
+              <span class="stat-label">Módulos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">360</span>
+              <span class="stat-label">Grados</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Solución</span>
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="cta" onclick="openPopup(11)">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M11 6H1M6 11L1 6l5-5" />
+              </svg>
+              Ver más
+            </button>
+            <a class="cta" href="#s0">
+              COMENZAR DEMO
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </div>
 
+  <!-- POPUPS MODALES -->
+  <div id="popup-0" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(0)">&times;</button>
+        <h2>TU CLUB EN PILOTO AUTOMÁTICO</h2>
+        <p class="modal-text"><strong>Mientras tú duermes, tu Club Vacacional vende.</strong> Mientras tú comes, tu equipo se entrena. Mientras tú gestiona estrategia, Victor gestiona operación completamente. Un solo sistema integrado. Todos los departamentos conectados. Cero intervención humana en lo operativo. Todo funciona mientras tú duermes o estás en estrategia. Transformamos tu Club Vacacional hoy con datos reales y automatización de punta.</p>
+        <button class="cta" onclick="closePopup(0)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-1" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(1)">&times;</button>
+        <h2>INVITACIÓN INTELIGENTE</h2>
+        <p class="modal-text"><strong>Mientras tú haces suposiciones sobre quién puede comprar, Victor analiza:</strong> Historial de viajes (¿viaja real o promete?), Capacidad crediticia (¿tiene dinero o dice que tiene?), Patrón de gasto (¿es gastador o ahorrador?), Interés real (¿abrió email? ¿cuántas veces vio la oferta?). Solo después, Victor dice: "Invita a este". El resultado: menos invitaciones inútiles, más compras reales. Reduce prospección inútil 85%. Regalos controlados. Cero fugas. Follow-up automático evita cancelaciones post-venta.</p>
+        <button class="cta" onclick="closePopup(1)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-2" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(2)">&times;</button>
+        <h2>CHECK-IN SIN PAPEL</h2>
+        <p class="modal-text"><strong>Familia escanea QR desde WhatsApp.</strong> Llena sus datos en 60 segundos completos. Llega al Club Vacacional VTC completamente sin papeleo. Tú ya tienes: nombre y contacto exacto, información completa de familia, presupuesto declarado, preferencias de viaje. La presentación comienza en ventaja máxima. Presentadores listos con data exacta. Agilidad operativa 80% superior. La conversión sube 40% porque el cliente ya está precalificado. Clima de confianza desde el primer segundo.</p>
+        <button class="cta" onclick="closePopup(2)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-3" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(3)">&times;</button>
+        <h2>CONTRATO QUE EXPLICA SOLO</h2>
+        <p class="modal-text"><strong>Abogado tradicional: 45 minutos de legalés.</strong> Cliente pierde a los 5 minutos. Pánico empieza. Victor IA en 8 minutos explica clara: "Tu membresía es tuya para siempre. No pierde valor. Puedes intercambiarla en 4,300 destinos. No estás atrapado. Puedes vender o regalar. Es 100% tuya." Cliente entiende completamente. Listo para firmar. Velocidad no es falta de rigor. Es claridad máxima. Victor VENDE derecho. La firma llega más rápido porque el cliente finalmente ENTIENDE lo que está firmando. Objeciones evitadas: 6+. Contrato firmado: garantizado.</p>
+        <button class="cta" onclick="closePopup(3)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-4" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(4)">&times;</button>
+        <h2>LEGAL QUE AUDITA SOLA</h2>
+        <p class="modal-text"><strong>Tu abogado revisa contratos 1 vez por mes.</strong> Entre medio, hay 1,000 contratos. 99 pasan desapercibidos. 1 tiene error. 6 meses después: multa de PROFECO $50K. Victor audita CADA contrato CADA día. 1,000 contratos/día = 1,000 revisiones/día automáticamente. Error detectado al instante. Cero riesgos legales. Cero multas sorpresa. Cada modificación requiere reconocimiento facial. Solo personas autorizadas pueden cambiar datos. Intento sin aprobación = bloqueado al instante. Cada cambio registrado: QUIÉN, CUÁNDO, POR QUÉ. No es desconfianza. Es profesionalismo de banco. Tu operación es bóveda. No archivo.</p>
+        <button class="cta" onclick="closePopup(4)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-5" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(5)">&times;</button>
+        <h2>ENTRENA TU EQUIPO AUTOMÁTICO</h2>
+        <p class="modal-text"><strong>Entrevistador pregunta: "¿Tienes antecedentes?"</strong> Candidato: "No." Candidato miente. 6 meses después: descubres condena por fraude. Liability total para ti. Con Victor: Victor conecta automáticamente con bases de datos de antecedentes. No pregunta (cero mentiras). Victor SABE si hay problemas. Si hay: candidato recibe "Te invitamos a otro puesto que matches mejor tu perfil." Candidato no se ofende. Tú protegido. Luego: VTC /training, 16 módulos completos sobre venta Club Vacacional VTC. Scripts listos español/inglés. Ejercicios de práctica. Exámenes de conocimiento. 2 semanas después: prospecto domina 80%. Ramp-up 70% más rápido. Ventas desde día 1.</p>
+        <button class="cta" onclick="closePopup(5)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-6" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(6)">&times;</button>
+        <h2>MAYORDOMO 24/7</h2>
+        <p class="modal-text">Día 0 (firma): "¡Hola García, bienvenido al Club Vacacional VTC!" Día 1: "¿Llegó bien a casa? ¿Los niños disfrutaron?" Día 3: "Tu membresía Club Vacacional VTC está activa. Puedes reservar." Día 7: "¿Ya checaste los 4,300 destinos VTC?" Día 30: "30 días cliente Club Vacacional VTC. ¿Qué preguntas tienes?" 50 touchpoints. 5 canales (email, WhatsApp, SMS, llamada, portal). 0 fricción (Victor habla como amigo, no como sistema). Este cliente NO cancela su membresía Club Vacacional. Porque Victor fue más útil que el humano que lo vendió. Resultado: 98% retención a 6 meses de membresía Club Vacacional VTC.</p>
+        <button class="cta" onclick="closePopup(6)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-7" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(7)">&times;</button>
+        <h2>CAPACITA Y MEJORA</h2>
+        <p class="modal-text">Tu nuevo vendedor Club Vacacional VTC accede a VTC /training. Victor lo guía a través de 16 módulos: Fundamentos del Negocio Club Vacacional VTC, Psicología del Vendedor Club Vacacional VTC, Técnicas específicas por rol, Los 19 pasos del pitch neurociencífico Club Vacacional VTC. Cada módulo incluye: Videos de 15 min, Scripts listos (español/inglés), Ejercicios de práctica, Exámenes de conocimiento, Reportes de progreso. Empleado termina: sabe vender membresías Club Vacacional VTC. PERO LUEGO: si tu OPC cierra 8% (promedio es 15%), Victor CREA CAMINO DE REENTRENAMIENTO personalizado. Día 1: Repasa módulo específico (20 min), Día 3: Practica con casos reales (30 min roleplay), Día 5: Entrena en el módulo que falla (simulacro). 2 semanas después: OPC retoma y cierra 13%. Ganancia: +5 puntos = $15K en comisión extra ese mes.</p>
+        <button class="cta" onclick="closePopup(7)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-8" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(8)">&times;</button>
+        <h2>NÚMEROS EN TIEMPO REAL</h2>
+        <p class="modal-text">CEO = control. Control = visibilidad. Visibilidad = números en vivo. Con tracker (dashboard completo): Ves qué departamento se va a atrasar ANTES de que se atrase, Ves qué empleado está quemado ANTES de que renuncie, Ves qué área necesita dinero ANTES de que lo pida. No actúas sobre eventos (ex-post). Actúas sobre patrones (pre-activo). Es la diferencia entre jugar ajedrez viendo el tablero vs jugar ajedrez en la oscuridad. Abres dashboard a las 9 AM: Ventas de hoy: $0 (es temprano), Ventas de ayer: $145K, Promedio esta semana: $120K/día, Tendencia vs mes pasado: +12%, Top vendedor: Juan — $18K en 1 venta, Bottom vendedor: Pedro — 0 ventas, 2 be-backs. Sin delay = sin desperdicio = sin oportunidad perdida.</p>
+        <button class="cta" onclick="closePopup(8)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-9" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(9)">&times;</button>
+        <h2>SEGURIDAD BANCARIA</h2>
+        <p class="modal-text">Duermes sabiendo: Clientes del Club Vacacional están protegidos mejor que en banco, Si algo pasara, ya estás resguardado legalmente, Victor monitorea 24/7 (tú no tienes que), Hackeros ven tu red y piensan "imposible de quebrar". Con Victor + seguridad bancaria: AES-256 cifrado (mismo que usa el Banco de México), TLS 1.3 en todas las transmisiones, Servidores privados (no cloud compartido), Auditoría cada acceso, Backup automático cada hora, Zero-trust architecture (cada usuario verificado). Si alguien intenta acceder SIN autorización: Bloqueado en 0.1 segundos, Registrado, Reportado a ti. Costo: $2K/mes. Que gaste una multa: $200K. ROI por prevención: 100x.</p>
+        <button class="cta" onclick="closePopup(9)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-10" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(10)">&times;</button>
+        <h2>TU STACK CONECTADO</h2>
+        <p class="modal-text">Cliente compra membresía Club Vacacional VTC: (1) Victor → Salesforce (automático), (2) Victor → HubSpot (automático), (3) Victor → ContabilidadApp (automático), (4) Victor → Email de bienvenida (automático), (5) Victor → Factura (automático). Tiempo: 0 segundos. Errores: 0. Costo: $0 en FTE. Hoy: 200 clientes/mes → puedes manejar con 2 personas haciendo data entry. Mañana: 500 clientes/mes → necesitas 5 personas. El año que viene: 1000 clientes/mes → necesitas 10 personas. Con Victor conectado escalas sin exponenciar costo operativo. Es la diferencia entre crecer y colapsar. Con Victor como single source of truth: Todos los sistemas leen de Victor, Victor es la fuente, Todos ven lo mismo, Cero conflicto de data. Decisiones se toman en VERDAD. No en promedio de guesses.</p>
+        <button class="cta" onclick="closePopup(10)">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="popup-11" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closePopup(11)">&times;</button>
+        <h2>CONTROL TOTAL</h2>
+        <p class="modal-text">CEO ve: Revenue total ($2.1M esta semana), Proyección fin de mes ($8.4M), Rentabilidad por departamento, Attrition de empleados, Forecast de próximos 6 meses. OPC ve: Sus propios leads hoy, Tasa de conversión personal, Ranking vs otros OPC, Bonos en vivo (cuánto ganó hoy). Gerente ve: Performance de su equipo, Identificación de bajo performers, Oportunidades de coaching, Comisiones a pagar. Contador ve: Facturación diaria, Ingresos por categoría, Costos operativos, Márgenes. 4 roles. 4 dashboards. Cada uno ve LO QUE NECESITA. Cero ruido. Cero overwhelm. Tracker (dashboard completo) = corazón de tu operación. Todos los datos fluyen ahí: Ventas → Tracker, Marketing → Tracker, RRHH → Tracker, Legal → Tracker, Finanzas → Tracker, Seguridad → Tracker. CEO mira Tracker = ve la salud COMPLETA de su Club Vacacional VTC. Si hay problema en cualquier área, se ve ahí. Si hay oportunidad en cualquier área, se ve ahí.</p>
+        <button class="cta" onclick="closePopup(11)">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+
   <div id="credit">
-    <a href="https://www.linkedin.com/posts/luis-martinez-lr_ai-creativity-reversecreativity-activity-7366853269517651970-zeUD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFq1dzgByK1x_NMrcq582OMbK-_3q0DthYY" target="_blank" rel="noopener">Reverse Creativity</a>
+    <a href="#" target="_blank" rel="noopener">VICTOR IA — CLUB VACACIONAL VTC</a>
   </div>
 
   <script>
     const IMAGE_SRCS = [
-      "https://assets.codepen.io/573855/demo-raw-01.webp",
-      "https://assets.codepen.io/573855/demo-raw-02.webp",
-      "https://assets.codepen.io/573855/demo-raw-03.webp",
-      "https://assets.codepen.io/573855/demo-raw-04.webp",
-      "https://assets.codepen.io/573855/demo-raw-05.webp",
-      "https://assets.codepen.io/573855/demo-raw-06.webp",
-      "https://assets.codepen.io/573855/demo-raw-01.webp",
-      "https://assets.codepen.io/573855/demo-raw-02.webp",
-      "https://assets.codepen.io/573855/demo-raw-03.webp",
-      "https://assets.codepen.io/573855/demo-raw-04.webp",
-      "https://assets.codepen.io/573855/demo-raw-05.webp",
-      "https://assets.codepen.io/573855/demo-raw-06.webp"
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719212/cube-gallery/face-0.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719216/cube-gallery/face-1.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719228/cube-gallery/face-2.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719231/cube-gallery/face-3.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719235/cube-gallery/face-4.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719239/cube-gallery/face-5.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719243/cube-gallery/face-6.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719251/cube-gallery/face-7.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719260/cube-gallery/face-8.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719263/cube-gallery/face-9.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719221/cube-gallery/face-10.webp",
+      "https://res.cloudinary.com/dxy9t8qur/image/upload/v1780719225/cube-gallery/face-11.webp"
     ];
 
     const IMAGE_ASPECTS = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
     const FACE_NAMES = [
-      "AUTOMATIZA",
-      "INTEGRA",
-      "OPTIMIZA",
-      "ESCALA",
-      "MONITOREA",
-      "EJECUTA",
-      "AUTOMATIZA",
-      "INTEGRA",
-      "OPTIMIZA",
-      "ESCALA",
-      "MONITOREA",
-      "EJECUTA"
+      "VICTOR IA",
+      "MARKETING IA",
+      "HOSTING QR",
+      "CONTRATOS",
+      "ADMIN LEGAL",
+      "RRHH",
+      "ONBOARDING",
+      "CAPACITACIÓN",
+      "FINANZAS",
+      "SEGURIDAD",
+      "ARQUITECTURA",
+      "DASHBOARD"
     ];
 
     const SWAP_RADIUS = 3;
@@ -1161,7 +1602,7 @@
         if (offset === 0) continue;
         const si = base + offset;
         if (si < 0 || si >= N) continue;
-        setFaceImage(faceAtStop(si), si);
+        setFaceImage(faceAtStop(si), si, true);
       }
     }
 
@@ -1180,6 +1621,7 @@
         dom.captionNum.textContent = String(si + 1).padStart(2, "0");
         dom.captionName.textContent = name;
         sceneDots.forEach((d, i) => d.classList.toggle("active", i === si));
+        setFaceImage(faceAtStop(si), si, true);
       }
     };
 
@@ -1414,6 +1856,389 @@
           : 0;
       smoothScrollToY(Math.max(0, baseY + extraOffset));
     });
+
+    // POPUP FUNCTIONS
+    function openPopup(index) {
+      const modal = document.getElementById(`popup-${index}`);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePopup(index) {
+      const modal = document.getElementById(`popup-${index}`);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Close popup when clicking outside modal-content
+    document.addEventListener('click', function(event) {
+      if (event.target.classList.contains('modal')) {
+        const modal = event.target;
+        const index = modal.id.replace('popup-', '');
+        closePopup(index);
+      }
+    });
   </script>
+
+  <!-- DEMO FORM HANDLER -->
+  <script>
+    document.getElementById('demoForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-submit');
+      btn.disabled = true;
+      btn.textContent = 'Procesando...';
+
+      try {
+        const formData = new FormData(e.target);
+        const data = {
+          nombre: formData.get('nombre'),
+          apellido: formData.get('apellido'),
+          telefono: formData.get('telefono'),
+          whatsapp: formData.get('whatsapp') || null,
+          email: formData.get('email'),
+          sitio_web: formData.get('sitio_web') || null,
+          num_empleados: formData.get('num_empleados'),
+          empresa_desc: formData.get('empresa_desc') || null
+        };
+
+        const res = await fetch('/api/bookings/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+        if (result.success || res.ok) {
+          alert('✓ Solicitud procesada. Abriendo calendario...');
+          window.location.href = `https://cal.com/demo-mesa-inteligente-9icuas/victor-ia?name=${encodeURIComponent(data.nombre + ' ' + data.apellido)}&email=${encodeURIComponent(data.email)}`;
+        } else {
+          alert('Error: ' + (result.message || 'No pudimos procesar tu solicitud'));
+          btn.disabled = false;
+          btn.textContent = 'Agendar Llamada';
+        }
+      } catch (err) {
+        alert('Error al procesar: ' + err.message);
+        btn.disabled = false;
+        btn.textContent = 'Agendar Llamada';
+      }
+    });
+  </script>
+
+  <!-- Anime.js deshabilitado temporalmente - problemas en iOS. Vercel redeploy en progreso. -->
+
+  <!-- FOOTER COMPLETO CON FORMULARIO CAL.COM -->
+  <footer id="footer-victor-ia" style="background: #111316; border-top: none; padding: 4rem 2rem 2rem; margin-top: 6rem; color: #9CA3AF; font-family: var(--font-display); font-size: 0.9rem; line-height: 1.7;">
+    <style>
+      #footer-victor-ia { background: #111316; color: #9CA3AF; border-top: none; }
+      #footer-victor-ia a { color: #E5B842; text-decoration: none; transition: color 0.2s; }
+      #footer-victor-ia a:hover { color: #F3D273; text-decoration: underline; }
+      #footer-victor-ia .footer-container { max-width: 1200px; margin: 0 auto; }
+      #footer-victor-ia .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+      #footer-victor-ia .footer-section h3 { color: #E5B842; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+      #footer-victor-ia .footer-section ul { list-style: none; padding: 0; }
+      #footer-victor-ia .footer-section li { margin-bottom: 0.75rem; }
+      #footer-victor-ia .footer-contact { display: flex; flex-direction: column; gap: 1rem; }
+      #footer-victor-ia .footer-contact strong { color: #FFFFFF; display: block; margin-bottom: 0.3rem; }
+      #footer-victor-ia .footer-form { background: #1B1D22; border: 1px solid #2D313A; border-radius: 8px; padding: 2rem; }
+      #footer-victor-ia .booking-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+      @media (max-width: 768px) { #footer-victor-ia .booking-form-grid { grid-template-columns: 1fr; } }
+      #footer-victor-ia .booking-form-grid.full-width { grid-template-columns: 1fr; }
+      #footer-victor-ia .footer-form input, #footer-victor-ia .footer-form select, #footer-victor-ia .footer-form textarea { width: 100%; padding: 0.8rem 1rem; background: #111316; border: 1px solid #2D313A; border-radius: 6px; color: #FFFFFF; font-family: inherit; font-size: 0.9rem; }
+      #footer-victor-ia .footer-form input:focus, #footer-victor-ia .footer-form select:focus, #footer-victor-ia .footer-form textarea:focus { outline: none; border-color: #E5B842; box-shadow: 0 0 0 2px rgba(229, 184, 66, 0.1); }
+      #footer-victor-ia .footer-form input.error, #footer-victor-ia .footer-form textarea.error { border-color: #FF3D00; }
+      #footer-victor-ia .booking-error { font-size: 0.75rem; color: #FF3D00; margin-top: 0.3rem; display: none; }
+      #footer-victor-ia .booking-error.show { display: block; }
+      #footer-victor-ia .booking-counter { font-size: 0.75rem; color: #9CA3AF; margin-top: 0.3rem; }
+      #footer-victor-ia .footer-form button { background: #E5B842; color: #111316; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+      #footer-victor-ia .footer-form button:hover:not(:disabled) { background: #F3D273; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(229, 184, 66, 0.2); }
+      #footer-victor-ia .footer-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+      #footer-victor-ia .footer-msg { font-size: 0.85rem; color: #00E676; margin-bottom: 1rem; display: none; padding: 0.75rem; border-radius: 4px; background: rgba(0, 230, 118, 0.1); }
+      #footer-victor-ia .footer-msg.error { color: #FF3D00; background: rgba(255, 61, 0, 0.1); }
+      #footer-victor-ia .footer-msg.success { color: #00E676; }
+      #footer-victor-ia .booking-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 9999; align-items: center; justify-content: center; }
+      #footer-victor-ia .booking-modal.show { display: flex; }
+      #footer-victor-ia .booking-modal-content { background: #1B1D22; border: 1px solid #2D313A; border-radius: 8px; padding: 2rem; max-width: 400px; text-align: center; animation: slideIn 0.3s ease; }
+      @keyframes slideIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+      #footer-victor-ia .booking-modal-content h2 { color: #E5B842; margin: 0 0 1rem; }
+      #footer-victor-ia .booking-modal-content p { color: #FFFFFF; line-height: 1.6; margin: 0 0 1.5rem; }
+      #footer-victor-ia .booking-modal-content button { background: #E5B842; color: #111316; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+      #footer-victor-ia .booking-modal-content button:hover { background: #F3D273; }
+      #footer-victor-ia .footer-bottom { border-top: none !important; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+      #footer-victor-ia .footer-bottom-left { display: flex; gap: 2rem; flex-wrap: wrap; }
+      @media (max-width: 768px) {
+        #footer-victor-ia { padding: 2.5rem 1.5rem 1.5rem; }
+        #footer-victor-ia .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        #footer-victor-ia .footer-bottom { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- LEGAL -->
+        <div class="footer-section">
+          <h3>Legal (México)</h3>
+          <ul>
+            <li><a href="/legal/terminos-condiciones.html" target="_blank">Términos y Condiciones</a></li>
+            <li><a href="/legal/politica-privacidad.html" target="_blank">Política de Privacidad</a></li>
+            <li><a href="/legal/aviso-privacidad-lpdp.html" target="_blank">Aviso de Privacidad (LPDP)</a></li>
+            <li><a href="/legal/avisos-legales.html" target="_blank">Avisos Legales</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-section">
+          <h3>Contacto e Información</h3>
+          <div class="footer-contact">
+            <div>
+              <strong>Empresa</strong>
+              Influence IA SA de CV
+            </div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@victor-ia.com.mx">info@victor-ia.com.mx</a>
+            </div>
+            <div>
+              <strong>Teléfono</strong>
+              <a href="tel:+529842353159">+52 984-235-3159</a>
+            </div>
+            <div>
+              <strong>Otros Servicios</strong>
+              <a href="https://victor-ia.xyz" target="_blank">victor-ia.xyz</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOKING FORM CAL.COM -->
+        <div class="footer-section">
+          <h3>Agendar Videollamada</h3>
+          <div class="footer-form">
+            <form id="booking-form">
+              <div class="footer-msg" id="booking-msg"></div>
+              <div class="booking-form-grid">
+                <input type="text" id="booking-nombre" placeholder="Nombre" required>
+                <input type="text" id="booking-apellido" placeholder="Apellido" required>
+              </div>
+              <div class="booking-form-grid">
+                <input type="tel" id="booking-tel" placeholder="Teléfono" required>
+                <input type="tel" id="booking-whatsapp" placeholder="WhatsApp">
+              </div>
+              <div class="booking-form-grid full-width">
+                <input type="email" id="booking-email" placeholder="Email" required>
+              </div>
+              <div class="booking-form-grid full-width">
+                <input type="url" id="booking-web" placeholder="Sitio web (opcional)">
+              </div>
+              <div class="booking-form-grid full-width">
+                <select id="booking-empleados" required>
+                  <option value="">Número de empleados</option>
+                  <option value="1-10">1 - 10</option>
+                  <option value="11-50">11 - 50</option>
+                  <option value="51-250">51 - 250</option>
+                  <option value="251+">251+</option>
+                </select>
+              </div>
+              <div class="booking-form-grid full-width">
+                <textarea id="booking-empresa" placeholder="Cuéntanos acerca de tu empresa" maxlength="500" rows="3"></textarea>
+                <div class="booking-counter"><span id="booking-count">0</span> / 500</div>
+              </div>
+              <button type="submit" id="booking-btn">Agendar Videollamada</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <div style="font-size: 0.85rem;">
+            © 2026 Victor IA — Influence IA SA de CV<br>
+            Todos los derechos reservados.
+          </div>
+        </div>
+        <div style="text-align: right; font-size: 0.85rem;">
+          <a href="https://victor-ia.xyz" target="_blank" style="color: #E5B842;">Victor IA Website</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de confirmación -->
+  <div class="booking-modal" id="booking-modal">
+    <div class="booking-modal-content">
+      <h2>Videollamada Agendada</h2>
+      <p id="modal-message">Tu solicitud ha sido enviada. Serás redirigido al calendario para elegir fecha y hora.</p>
+      <button onclick="window.location.href='https://cal.com/demo-mesa-inteligente-9icuas/victor-ia'; document.getElementById('booking-modal').classList.remove('show');">Aceptar</button>
+    </div>
+  </div>
+
+  <script>
+    // Booking Form Handler para Cal.com
+    (function() {
+      const form = document.getElementById('booking-form');
+      const msg = document.getElementById('booking-msg');
+      const modal = document.getElementById('booking-modal');
+      const empresaField = document.getElementById('booking-empresa');
+      const countSpan = document.getElementById('booking-count');
+
+      if (!form) return;
+
+      // Contador de caracteres
+      empresaField.addEventListener('input', function() {
+        countSpan.textContent = this.value.length;
+      });
+
+      // Validación de teléfono: formato MX/USA
+      function validatePhone(phone) {
+        if (!phone) return false;
+        const cleaned = phone.replace(/\D/g, '');
+        return cleaned.length >= 10;
+      }
+
+      // Validación de email
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      // Limpiar teléfono
+      function cleanPhone(phone) {
+        return phone.replace(/\D/g, '');
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Obtener valores
+        const nombre = document.getElementById('booking-nombre').value.trim();
+        const apellido = document.getElementById('booking-apellido').value.trim();
+        const tel = document.getElementById('booking-tel').value.trim();
+        const whatsapp = document.getElementById('booking-whatsapp').value.trim();
+        const email = document.getElementById('booking-email').value.trim();
+        const web = document.getElementById('booking-web').value.trim();
+        const empleados = document.getElementById('booking-empleados').value;
+        const empresa = document.getElementById('booking-empresa').value.trim();
+
+        // Validación
+        let hasError = false;
+        msg.classList.remove('error', 'success', 'show');
+
+        if (!nombre) {
+          document.getElementById('booking-nombre').classList.add('error');
+          hasError = true;
+        } else {
+          document.getElementById('booking-nombre').classList.remove('error');
+        }
+
+        if (!apellido) {
+          document.getElementById('booking-apellido').classList.add('error');
+          hasError = true;
+        } else {
+          document.getElementById('booking-apellido').classList.remove('error');
+        }
+
+        if (!validatePhone(tel)) {
+          document.getElementById('booking-tel').classList.add('error');
+          msg.textContent = 'El teléfono debe tener al menos 10 dígitos.';
+          hasError = true;
+        } else {
+          document.getElementById('booking-tel').classList.remove('error');
+        }
+
+        if (whatsapp && !validatePhone(whatsapp)) {
+          document.getElementById('booking-whatsapp').classList.add('error');
+          msg.textContent = 'El WhatsApp debe tener al menos 10 dígitos.';
+          hasError = true;
+        } else {
+          document.getElementById('booking-whatsapp').classList.remove('error');
+        }
+
+        if (!validateEmail(email)) {
+          document.getElementById('booking-email').classList.add('error');
+          msg.textContent = 'Por favor escribe un email válido.';
+          hasError = true;
+        } else {
+          document.getElementById('booking-email').classList.remove('error');
+        }
+
+        if (!empleados) {
+          document.getElementById('booking-empleados').classList.add('error');
+          hasError = true;
+        } else {
+          document.getElementById('booking-empleados').classList.remove('error');
+        }
+
+        if (hasError) {
+          msg.classList.add('error', 'show');
+          if (!msg.textContent) msg.textContent = 'Por favor completa todos los campos requeridos correctamente.';
+          return;
+        }
+
+        // Desabilitar botón y mostrar loading
+        const btn = document.getElementById('booking-btn');
+        btn.disabled = true;
+        btn.textContent = 'Procesando...';
+
+        try {
+          // POST a /api/bookings/create
+          const response = await fetch('/api/bookings/create', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              nombre,
+              apellido,
+              telefono: cleanPhone(tel),
+              whatsapp: whatsapp ? cleanPhone(whatsapp) : null,
+              email,
+              sitio_web: web || null,
+              num_empleados: empleados,
+              empresa
+            })
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) throw new Error(data.message || 'Error al procesar la solicitud');
+
+          // Éxito: mostrar modal y preparar redirección a cal.com
+          msg.classList.remove('error');
+          msg.classList.add('success', 'show');
+          msg.textContent = '✓ Solicitud procesada. Se abrirá el calendario.';
+          form.reset();
+          countSpan.textContent = '0';
+
+          // Preparar URL de cal.com con pre-fill
+          const calUrl = `https://cal.com/demo-mesa-inteligente-9icuas/victor-ia?name=${encodeURIComponent(nombre + ' ' + apellido)}&email=${encodeURIComponent(email)}`;
+
+          // Mostrar modal y redirigir después de 2 segundos
+          setTimeout(function() {
+            document.getElementById('modal-message').textContent = `Hola ${nombre}, tu solicitud está lista. Serás redirigido al calendario.`;
+            modal.classList.add('show');
+            setTimeout(function() {
+              window.location.href = calUrl;
+            }, 1500);
+          }, 800);
+
+        } catch (err) {
+          msg.classList.add('error', 'show');
+          msg.textContent = 'Error: ' + (err.message || 'No pudimos procesar tu solicitud. Intenta de nuevo.');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Agendar Videollamada';
+        }
+      });
+
+      // Cerrar modal si se hace clic afuera
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
