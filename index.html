@@ -203,6 +203,12 @@
         grid-template-columns: 0.65fr 1.35fr;
       }
 
+      /* Módulos pares (2, 4, 6, 8, 10, 12): espejo — texto más estrecho a la der */
+      #s1 .module-wrapper, #s3 .module-wrapper, #s5 .module-wrapper,
+      #s7 .module-wrapper, #s9 .module-wrapper, #s11 .module-wrapper {
+        grid-template-columns: 1.35fr 0.65fr;
+      }
+
       .module-number {
         position: absolute;
         bottom: 1.5rem;
