@@ -161,6 +161,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         position: relative;
       }
 
@@ -172,13 +173,19 @@
         border-bottom: none;
       }
 
-      .quadrant.top-right .text-card {
+      .quadrant.top-right {
         align-items: flex-end;
+      }
+
+      .quadrant.top-left {
+        align-items: flex-start;
+      }
+
+      .quadrant.top-right .text-card {
         text-align: right;
       }
 
       .quadrant.top-left .text-card {
-        align-items: flex-start;
         text-align: left;
       }
 
