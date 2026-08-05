@@ -835,6 +835,41 @@
           padding: 1.5rem 1.25rem;
         }
 
+        /* Móvil: el wrapper 2x2 con aspect-ratio recorta el contenido.
+           Se apila en bloque y los cuadrantes vacíos (imagen) se ocultan. */
+        .module-wrapper {
+          display: block;
+          aspect-ratio: auto;
+          overflow: visible;
+        }
+
+        .quadrant {
+          border-right: none;
+          border-bottom: none;
+          height: auto;
+          padding: 0;
+        }
+
+        .quadrant:empty {
+          display: none;
+        }
+
+        .quadrant.top-right .text-card {
+          text-align: left;
+        }
+
+        .quadrant.top-right .text-card .h-line {
+          margin-inline-start: 0;
+          transform-origin: left;
+        }
+
+        .module-number {
+          position: static;
+          transform: none;
+          display: block;
+          margin-block-start: 1rem;
+        }
+
         .body-text {
           line-height: 1.55;
         }
