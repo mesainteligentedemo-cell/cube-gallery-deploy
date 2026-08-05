@@ -483,16 +483,26 @@
         margin-inline: auto;
       }
 
+      .quadrant.top-left {
+        position: relative;
+      }
+
       .quadrant.top-left .text-card {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 320px !important;
         max-width: 320px !important;
-        width: 100%;
-        margin: 0 !important;
       }
 
       .quadrant.top-right .text-card {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 320px !important;
         max-width: 320px !important;
-        width: 100%;
-        margin: 0 auto 0 auto !important;
       }
 
       .tag {
