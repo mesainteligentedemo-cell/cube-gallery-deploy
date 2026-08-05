@@ -150,7 +150,6 @@
         width: 100%;
         max-width: 1400px;
         aspect-ratio: 2 / 1;
-        border: 2px solid var(--accent);
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -158,8 +157,6 @@
       }
 
       .quadrant {
-        border-right: 2px solid var(--accent);
-        border-bottom: 2px solid var(--accent);
         padding: 2rem 1.5rem;
         display: flex;
         flex-direction: column;
@@ -171,14 +168,6 @@
 
       .quadrant.top-right {
         align-items: flex-end;
-      }
-
-      .quadrant:nth-child(2n) {
-        border-right: none;
-      }
-
-      .quadrant:nth-child(n+3) {
-        border-bottom: none;
       }
 
       .quadrant.top-left {
