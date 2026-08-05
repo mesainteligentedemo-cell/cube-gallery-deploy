@@ -140,7 +140,58 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 6rem calc(5rem + var(--ui-inset)) 6rem 5rem;
+        padding: 2rem;
+      }
+
+      .module-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        aspect-ratio: 2 / 1;
+        border: 2px solid var(--accent);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        overflow: hidden;
+      }
+
+      .quadrant {
+        border-right: 2px solid var(--accent);
+        border-bottom: 2px solid var(--accent);
+        padding: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+
+      .quadrant:nth-child(2n) {
+        border-right: none;
+      }
+
+      .quadrant:nth-child(n+3) {
+        border-bottom: none;
+      }
+
+      .quadrant.top-right .text-card {
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .quadrant.top-left .text-card {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .module-number {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        opacity: 0.5;
       }
     }
 
@@ -899,299 +950,407 @@
 
   <div id="scroll_container">
     <section id="s0">
-      <div class="text-card">
-        <div class="tag">Automatiza Tu Club Vacacional</div>
-        <h1>TU CLUB EN PILOTO<br>AUTOMÁTICO</h1>
-        <p class="body-text">
-          Mientras duermes, tu Club Vacacional vende. Mientras comes, tu equipo se entrena.
-          Victor maneja operación automáticamente. Un solo sistema. Todos los departamentos.
-          Cero intervención manual. Transformamos tu Club Vacacional hoy.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(0)">
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left"></div>
+        <div class="quadrant top-right">
+          <div class="text-card">
+            <div class="tag">Automatiza Tu Club Vacacional</div>
+            <h1>TU CLUB EN PILOTO<br>AUTOMÁTICO</h1>
+            <p class="body-text">
+              Mientras duermes, tu Club Vacacional vende. Mientras comes, tu equipo se entrena.
+              Victor maneja operación automáticamente. Un solo sistema. Todos los departamentos.
+              Cero intervención manual. Transformamos tu Club Vacacional hoy.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(0)">
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="quadrant bottom-left">
+          <span class="module-number">01</span>
+        </div>
+        <div class="quadrant bottom-right"></div>
       </div>
     </section>
 
     <section id="s1">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">Marketing IA</div>
-        <h2>INVITACIÓN<br>INTELIGENTE</h2>
-        <p class="body-text">
-          Mientras tú haces suposiciones sobre quién puede comprar, Victor analiza:
-          historial de viajes, capacidad crediticia, patrón de gasto, interés real.
-          Solo después, Victor dice: "Invita a este". Menos invitaciones. Más compras.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(1)">
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Marketing IA</div>
+            <h2>INVITACIÓN<br>INTELIGENTE</h2>
+            <p class="body-text">
+              Mientras tú haces suposiciones sobre quién puede comprar, Victor analiza:
+              historial de viajes, capacidad crediticia, patrón de gasto, interés real.
+              Solo después, Victor dice: "Invita a este". Menos invitaciones. Más compras.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(1)">
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="quadrant top-right"></div>
+        <div class="quadrant bottom-left"></div>
+        <div class="quadrant bottom-right">
+          <span class="module-number">02</span>
         </div>
       </div>
     </section>
 
     <section id="s2">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">Hosting QR</div>
-        <h2>CHECK-IN SIN<br>PAPEL</h2>
-        <p class="body-text">
-          Familia escanea QR desde WhatsApp. Llena sus datos en 60 segundos.
-          Llega al Club Vacacional VTC sin papeleo.
-          Ya tienes: nombre, teléfono, familia, presupuesto. Presentación en ventaja.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(2)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left"></div>
+        <div class="quadrant top-right">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Hosting QR</div>
+            <h2>CHECK-IN SIN<br>PAPEL</h2>
+            <p class="body-text">
+              Familia escanea QR desde WhatsApp. Llena sus datos en 60 segundos.
+              Llega al Club Vacacional VTC sin papeleo.
+              Ya tienes: nombre, teléfono, familia, presupuesto. Presentación en ventaja.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(2)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="quadrant bottom-left">
+          <span class="module-number">03</span>
+        </div>
+        <div class="quadrant bottom-right"></div>
       </div>
     </section>
 
     <section id="s3">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">Contratos</div>
-        <h2>CONTRATO QUE<br>EXPLICA SOLO</h2>
-        <p class="body-text">
-          Abogado tradicional: 45 minutos de legalés. Cliente pierde atención a los 5 minutos.
-          Victor IA: 8 minutos. Cliente ENTIENDE cada cláusula. Firma al instante.
-          Velocidad no es falta de rigor. Es claridad.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(3)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Contratos</div>
+            <h2>CONTRATO QUE<br>EXPLICA SOLO</h2>
+            <p class="body-text">
+              Abogado tradicional: 45 minutos de legalés. Cliente pierde atención a los 5 minutos.
+              Victor IA: 8 minutos. Cliente ENTIENDE cada cláusula. Firma al instante.
+              Velocidad no es falta de rigor. Es claridad.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(3)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="quadrant top-right"></div>
+        <div class="quadrant bottom-left"></div>
+        <div class="quadrant bottom-right">
+          <span class="module-number">04</span>
         </div>
       </div>
     </section>
 
     <section id="s4">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">Admin Legal</div>
-        <h2>LEGAL QUE<br>AUDITA SOLA</h2>
-        <p class="body-text">
-          Victor audita CADA contrato, CADA día automáticamente.
-          Si hay error, Victor lo detecta al instante.
-          Cada modificación requiere autorización biométrica. Cero riesgos legales.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(4)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left"></div>
+        <div class="quadrant top-right">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Admin Legal</div>
+            <h2>LEGAL QUE<br>AUDITA SOLA</h2>
+            <p class="body-text">
+              Victor audita CADA contrato, CADA día automáticamente.
+              Si hay error, Victor lo detecta al instante.
+              Cada modificación requiere autorización biométrica. Cero riesgos legales.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(4)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="quadrant bottom-left">
+          <span class="module-number">05</span>
+        </div>
+        <div class="quadrant bottom-right"></div>
       </div>
     </section>
 
     <section id="s5">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">RRHH</div>
-        <h2>ENTRENA TU<br>EQUIPO AUTOMÁTICO</h2>
-        <p class="body-text">
-          Victor conecta con bases de datos de antecedentes (no pregunta, cero mentiras).
-          Candidato no se ofende. Tú protegido. Luego: VTC /training,
-          16 módulos en 2 semanas. Candidato ya sabe el 80% que necesita.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(5)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">RRHH</div>
+            <h2>ENTRENA TU<br>EQUIPO AUTOMÁTICO</h2>
+            <p class="body-text">
+              Victor conecta con bases de datos de antecedentes (no pregunta, cero mentiras).
+              Candidato no se ofende. Tú protegido. Luego: VTC /training,
+              16 módulos en 2 semanas. Candidato ya sabe el 80% que necesita.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(5)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="quadrant top-right"></div>
+        <div class="quadrant bottom-left"></div>
+        <div class="quadrant bottom-right">
+          <span class="module-number">06</span>
         </div>
       </div>
     </section>
 
     <section id="s6">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">Onboarding</div>
-        <h2>MAYORDOMO<br>24/7</h2>
-        <p class="body-text">
-          Día 0 (firma): "¡Hola, bienvenido al Club Vacacional VTC!"
-          Día 1: "¿Llegó bien a casa?" Día 30: "30 días cliente."
-          50 touchpoints. 5 canales. 0 fricción. Resultado: 98% retención.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(6)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left"></div>
+        <div class="quadrant top-right">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Onboarding</div>
+            <h2>MAYORDOMO<br>24/7</h2>
+            <p class="body-text">
+              Día 0 (firma): "¡Hola, bienvenido al Club Vacacional VTC!"
+              Día 1: "¿Llegó bien a casa?" Día 30: "30 días cliente."
+              50 touchpoints. 5 canales. 0 fricción. Resultado: 98% retención.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(6)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="quadrant bottom-left">
+          <span class="module-number">07</span>
+        </div>
+        <div class="quadrant bottom-right"></div>
       </div>
     </section>
 
     <section id="s7">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">Capacitación</div>
-        <h2>CAPACITA Y<br>MEJORA</h2>
-        <p class="body-text">
-          Tu nuevo vendedor accede a VTC /training (16 módulos).
-          Empleado termina sabiendo vender Club Vacacional VTC.
-          Si cierra 8%, Victor crea reentrenamiento personalizado. 2 semanas: +5 puntos.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(7)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Capacitación</div>
+            <h2>CAPACITA Y<br>MEJORA</h2>
+            <p class="body-text">
+              Tu nuevo vendedor accede a VTC /training (16 módulos).
+              Empleado termina sabiendo vender Club Vacacional VTC.
+              Si cierra 8%, Victor crea reentrenamiento personalizado. 2 semanas: +5 puntos.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(7)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="quadrant top-right"></div>
+        <div class="quadrant bottom-left"></div>
+        <div class="quadrant bottom-right">
+          <span class="module-number">08</span>
         </div>
       </div>
     </section>
 
     <section id="s8">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">Finanzas</div>
-        <h2>NÚMEROS EN<br>TIEMPO REAL</h2>
-        <p class="body-text">
-          CEO = control. Control = visibilidad. Visibilidad = números en vivo.
-          Ves qué departamento se atrasa ANTES de que se atrase.
-          Actúas sobre patrones, no sobre eventos.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(8)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left"></div>
+        <div class="quadrant top-right">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Finanzas</div>
+            <h2>NÚMEROS EN<br>TIEMPO REAL</h2>
+            <p class="body-text">
+              CEO = control. Control = visibilidad. Visibilidad = números en vivo.
+              Ves qué departamento se atrasa ANTES de que se atrase.
+              Actúas sobre patrones, no sobre eventos.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(8)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="quadrant bottom-left">
+          <span class="module-number">09</span>
+        </div>
+        <div class="quadrant bottom-right"></div>
       </div>
     </section>
 
     <section id="s9">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">Seguridad</div>
-        <h2>SEGURIDAD<br>BANCARIA</h2>
-        <p class="body-text">
-          Duermes sabiendo: clientes protegidos mejor que en banco.
-          Victor monitorea 24/7. AES-256 + TLS 1.3.
-          Si algo pasara, ya estás resguardado legalmente.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(9)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Seguridad</div>
+            <h2>SEGURIDAD<br>BANCARIA</h2>
+            <p class="body-text">
+              Duermes sabiendo: clientes protegidos mejor que en banco.
+              Victor monitorea 24/7. AES-256 + TLS 1.3.
+              Si algo pasara, ya estás resguardado legalmente.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(9)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="quadrant top-right"></div>
+        <div class="quadrant bottom-left"></div>
+        <div class="quadrant bottom-right">
+          <span class="module-number">10</span>
         </div>
       </div>
     </section>
 
     <section id="s10">
-      <div class="text-card">
-        <div class="h-line"></div>
-        <div class="tag">Arquitectura</div>
-        <h2>TU STACK<br>CONECTADO</h2>
-        <p class="body-text">
-          Hoy: 200 clientes → 2 personas. Mañana: 1000 clientes → siguen siendo 2 personas.
-          Victor conecta todos tus sistemas. Cero trabajo manual.
-          Escalas sin exponenciar costos.
-        </p>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(10)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Más información
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </button>
+      <div class="module-wrapper">
+        <div class="quadrant top-left"></div>
+        <div class="quadrant top-right">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Arquitectura</div>
+            <h2>TU STACK<br>CONECTADO</h2>
+            <p class="body-text">
+              Hoy: 200 clientes → 2 personas. Mañana: 1000 clientes → siguen siendo 2 personas.
+              Victor conecta todos tus sistemas. Cero trabajo manual.
+              Escalas sin exponenciar costos.
+            </p>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(10)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Más información
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="quadrant bottom-left">
+          <span class="module-number">11</span>
+        </div>
+        <div class="quadrant bottom-right"></div>
       </div>
     </section>
 
     <section id="s11">
-      <div class="text-card right">
-        <div class="h-line"></div>
-        <div class="tag">Dashboard</div>
-        <h2>CONTROL<br>TOTAL</h2>
-        <p class="body-text">
-          CEO ve: revenue, rentabilidad, forecast. OPC ve: leads, conversión, bonos.
-          Gerente ve: equipo, performance, comisiones. 4 roles, 4 dashboards.
-          Cada uno ve exactamente lo que necesita. Cero ruido.
-        </p>
-        <div class="stat-row" style="justify-content: flex-end">
-          <div class="stat">
-            <span class="stat-num">12</span>
-            <span class="stat-label">Módulos</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">360</span>
-            <span class="stat-label">Grados</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">1</span>
-            <span class="stat-label">Solución</span>
+      <div class="module-wrapper">
+        <div class="quadrant top-left">
+          <div class="text-card">
+            <div class="h-line"></div>
+            <div class="tag">Dashboard</div>
+            <h2>CONTROL<br>TOTAL</h2>
+            <p class="body-text">
+              CEO ve: revenue, rentabilidad, forecast. OPC ve: leads, conversión, bonos.
+              Gerente ve: equipo, performance, comisiones. 4 roles, 4 dashboards.
+              Cada uno ve exactamente lo que necesita. Cero ruido.
+            </p>
+            <div class="stat-row" style="justify-content: flex-start">
+              <div class="stat">
+                <span class="stat-num">12</span>
+                <span class="stat-label">Módulos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">360</span>
+                <span class="stat-label">Grados</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">1</span>
+                <span class="stat-label">Solución</span>
+              </div>
+            </div>
+            <div class="cta-row">
+              <button class="cta" onclick="openPopup(11)">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M11 6H1M6 11L1 6l5-5" />
+                </svg>
+                Ver más
+              </button>
+              <a class="cta" href="#s0">
+                COMENZAR DEMO
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 6h10M6 1l5 5-5 5" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="cta-row">
-          <button class="cta" onclick="openPopup(11)">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 6H1M6 11L1 6l5-5" />
-            </svg>
-            Ver más
-          </button>
-          <a class="cta" href="#s0">
-            COMENZAR DEMO
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
+        <div class="quadrant top-right"></div>
+        <div class="quadrant bottom-left"></div>
+        <div class="quadrant bottom-right">
+          <span class="module-number">12</span>
         </div>
       </div>
     </section>
