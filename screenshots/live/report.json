@@ -1,0 +1,642 @@
+[
+  {
+    "scrollWidth": 360,
+    "clientWidth": 360,
+    "scrollHeight": 9600,
+    "innerHeight": 800,
+    "horizontalOverflow": false,
+    "overflowingElements": [],
+    "smallTapTargets": [],
+    "sections": [
+      {
+        "id": "s0",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 308,
+        "cardW": 328,
+        "emptyRatio": 0.61
+      },
+      {
+        "id": "s1",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 302,
+        "cardW": 328,
+        "emptyRatio": 0.62
+      },
+      {
+        "id": "s2",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 281,
+        "cardW": 328,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s3",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 302,
+        "cardW": 328,
+        "emptyRatio": 0.62
+      },
+      {
+        "id": "s4",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 281,
+        "cardW": 328,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s5",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 302,
+        "cardW": 328,
+        "emptyRatio": 0.62
+      },
+      {
+        "id": "s6",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 281,
+        "cardW": 328,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s7",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 302,
+        "cardW": 328,
+        "emptyRatio": 0.62
+      },
+      {
+        "id": "s8",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 281,
+        "cardW": 328,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s9",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 281,
+        "cardW": 328,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s10",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 281,
+        "cardW": 328,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s11",
+        "h": 800,
+        "vhRatio": 1,
+        "cardH": 419,
+        "cardW": 328,
+        "emptyRatio": 0.48
+      }
+    ],
+    "fixedUI": {
+      "hud": {
+        "display": "block",
+        "top": 14,
+        "right": 16,
+        "bottom": 749,
+        "left": 256,
+        "w": 88,
+        "h": 37
+      },
+      "theme_toggle": {
+        "display": "flex",
+        "top": 744,
+        "right": 304,
+        "bottom": 12,
+        "left": 12,
+        "w": 44,
+        "h": 44
+      },
+      "face_caption": {
+        "display": "none",
+        "top": 0,
+        "right": 360,
+        "bottom": 800,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "credit": {
+        "display": "none",
+        "top": 0,
+        "right": 360,
+        "bottom": 800,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "scene_strip": {
+        "display": "none",
+        "top": 0,
+        "right": 360,
+        "bottom": 800,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    "safeArea": {
+      "top": "0px",
+      "bottom": "0px"
+    },
+    "viewportMeta": "width=device-width, initial-scale=1.0, viewport-fit=cover",
+    "viewport": "galaxy-s21 360x800"
+  },
+  {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "scrollHeight": 10128,
+    "innerHeight": 844,
+    "horizontalOverflow": false,
+    "overflowingElements": [],
+    "smallTapTargets": [],
+    "sections": [
+      {
+        "id": "s0",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 319,
+        "cardW": 350,
+        "emptyRatio": 0.62
+      },
+      {
+        "id": "s1",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 313,
+        "cardW": 350,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s2",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 291,
+        "cardW": 350,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s3",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 313,
+        "cardW": 350,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s4",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 291,
+        "cardW": 350,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s5",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 313,
+        "cardW": 350,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s6",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 291,
+        "cardW": 350,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s7",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 313,
+        "cardW": 350,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s8",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 291,
+        "cardW": 350,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s9",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 291,
+        "cardW": 350,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s10",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 291,
+        "cardW": 350,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s11",
+        "h": 844,
+        "vhRatio": 1,
+        "cardH": 373,
+        "cardW": 350,
+        "emptyRatio": 0.56
+      }
+    ],
+    "fixedUI": {
+      "hud": {
+        "display": "block",
+        "top": 14,
+        "right": 20,
+        "bottom": 793,
+        "left": 282,
+        "w": 88,
+        "h": 37
+      },
+      "theme_toggle": {
+        "display": "flex",
+        "top": 788,
+        "right": 334,
+        "bottom": 12,
+        "left": 12,
+        "w": 44,
+        "h": 44
+      },
+      "face_caption": {
+        "display": "none",
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "credit": {
+        "display": "none",
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "scene_strip": {
+        "display": "none",
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    "safeArea": {
+      "top": "0px",
+      "bottom": "0px"
+    },
+    "viewportMeta": "width=device-width, initial-scale=1.0, viewport-fit=cover",
+    "viewport": "iphone-12 390x844"
+  },
+  {
+    "scrollWidth": 393,
+    "clientWidth": 393,
+    "scrollHeight": 10224,
+    "innerHeight": 852,
+    "horizontalOverflow": false,
+    "overflowingElements": [],
+    "smallTapTargets": [],
+    "sections": [
+      {
+        "id": "s0",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 321,
+        "cardW": 353,
+        "emptyRatio": 0.62
+      },
+      {
+        "id": "s1",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 314,
+        "cardW": 353,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s2",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 292,
+        "cardW": 353,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s3",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 314,
+        "cardW": 353,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s4",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 292,
+        "cardW": 353,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s5",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 314,
+        "cardW": 353,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s6",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 292,
+        "cardW": 353,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s7",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 314,
+        "cardW": 353,
+        "emptyRatio": 0.63
+      },
+      {
+        "id": "s8",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 292,
+        "cardW": 353,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s9",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 292,
+        "cardW": 353,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s10",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 292,
+        "cardW": 353,
+        "emptyRatio": 0.66
+      },
+      {
+        "id": "s11",
+        "h": 852,
+        "vhRatio": 1,
+        "cardH": 374,
+        "cardW": 353,
+        "emptyRatio": 0.56
+      }
+    ],
+    "fixedUI": {
+      "hud": {
+        "display": "block",
+        "top": 14,
+        "right": 20,
+        "bottom": 801,
+        "left": 285,
+        "w": 88,
+        "h": 37
+      },
+      "theme_toggle": {
+        "display": "flex",
+        "top": 796,
+        "right": 337,
+        "bottom": 12,
+        "left": 12,
+        "w": 44,
+        "h": 44
+      },
+      "face_caption": {
+        "display": "none",
+        "top": 0,
+        "right": 393,
+        "bottom": 852,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "credit": {
+        "display": "none",
+        "top": 0,
+        "right": 393,
+        "bottom": 852,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "scene_strip": {
+        "display": "none",
+        "top": 0,
+        "right": 393,
+        "bottom": 852,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    "safeArea": {
+      "top": "0px",
+      "bottom": "0px"
+    },
+    "viewportMeta": "width=device-width, initial-scale=1.0, viewport-fit=cover",
+    "viewport": "iphone-14pro 393x852"
+  },
+  {
+    "scrollWidth": 430,
+    "clientWidth": 430,
+    "scrollHeight": 11184,
+    "innerHeight": 932,
+    "horizontalOverflow": false,
+    "overflowingElements": [],
+    "smallTapTargets": [],
+    "sections": [
+      {
+        "id": "s0",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 308,
+        "cardW": 390,
+        "emptyRatio": 0.67
+      },
+      {
+        "id": "s1",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 323,
+        "cardW": 390,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s2",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 300,
+        "cardW": 390,
+        "emptyRatio": 0.68
+      },
+      {
+        "id": "s3",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 300,
+        "cardW": 390,
+        "emptyRatio": 0.68
+      },
+      {
+        "id": "s4",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 300,
+        "cardW": 390,
+        "emptyRatio": 0.68
+      },
+      {
+        "id": "s5",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 300,
+        "cardW": 390,
+        "emptyRatio": 0.68
+      },
+      {
+        "id": "s6",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 300,
+        "cardW": 390,
+        "emptyRatio": 0.68
+      },
+      {
+        "id": "s7",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 323,
+        "cardW": 390,
+        "emptyRatio": 0.65
+      },
+      {
+        "id": "s8",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 300,
+        "cardW": 390,
+        "emptyRatio": 0.68
+      },
+      {
+        "id": "s9",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 277,
+        "cardW": 390,
+        "emptyRatio": 0.7
+      },
+      {
+        "id": "s10",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 300,
+        "cardW": 390,
+        "emptyRatio": 0.68
+      },
+      {
+        "id": "s11",
+        "h": 932,
+        "vhRatio": 1,
+        "cardH": 384,
+        "cardW": 390,
+        "emptyRatio": 0.59
+      }
+    ],
+    "fixedUI": {
+      "hud": {
+        "display": "block",
+        "top": 14,
+        "right": 20,
+        "bottom": 881,
+        "left": 322,
+        "w": 88,
+        "h": 37
+      },
+      "theme_toggle": {
+        "display": "flex",
+        "top": 876,
+        "right": 374,
+        "bottom": 12,
+        "left": 12,
+        "w": 44,
+        "h": 44
+      },
+      "face_caption": {
+        "display": "none",
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "credit": {
+        "display": "none",
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      },
+      "scene_strip": {
+        "display": "none",
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    "safeArea": {
+      "top": "0px",
+      "bottom": "0px"
+    },
+    "viewportMeta": "width=device-width, initial-scale=1.0, viewport-fit=cover",
+    "viewport": "iphone-14promax 430x932"
+  }
+]

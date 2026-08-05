@@ -631,20 +631,22 @@
       align-items: center;
       gap: 0.6rem;
       padding: 0.6rem 1.25rem;
-      border: var(--hairline) solid var(--accent);
-      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      background: #111316;
+      color: #d4d4d8;
       font-family: var(--font-mono);
       font-size: 0.62rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
 
     .cta:hover {
       background: var(--accent);
-      color: var(--bg);
+      color: #111316;
+      border-color: var(--accent);
     }
 
     .cta svg {
