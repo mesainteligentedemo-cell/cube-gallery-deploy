@@ -157,11 +157,11 @@
       .quadrant {
         border-right: 2px solid var(--accent);
         border-bottom: 2px solid var(--accent);
-        padding: 3.5rem;
+        padding: 2rem 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         position: relative;
       }
 
@@ -183,14 +183,16 @@
 
       .quadrant.top-left .text-card {
         text-align: left;
-        align-self: flex-start;
+        margin-inline: 0;
         margin-inline-end: auto;
+        width: fit-content;
       }
 
       .quadrant.top-right .text-card {
         text-align: right;
-        align-self: flex-end;
+        margin-inline: 0;
         margin-inline-start: auto;
+        width: fit-content;
       }
 
       .module-number {
