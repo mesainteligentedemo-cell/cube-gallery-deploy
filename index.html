@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -83,6 +83,10 @@
         --status-cyan: #00E5FF;
 
         /* Mapeo a variables antiguas para compatibilidad */
+        /* Tono cálido oscuro del tema "light" (paleta de texto blanco).
+           Sin esta definición --bg quedaba inválido → fondo blanco con
+           texto blanco (--fg: #ffffff) e ilegible. */
+        --light-bg: #141210;
         --dark-bg: var(--bg-main);
         --dark-fg: var(--text-white);
         --dark-muted: var(--text-muted);
@@ -101,6 +105,20 @@
         --card-bg: rgba(27, 29, 34, 0.95);
         --card-border: rgba(229, 184, 66, 0.15);
         --nav-x: calc(var(--ui-inset) + 0.125rem);
+
+        /* ── ZONAS SEGURAS (requiere viewport-fit=cover en el meta viewport) ──
+           Notch / Dynamic Island / home indicator / esquinas redondeadas.
+           En desktop y Android sin recortes estos valores resuelven a 0px,
+           por lo que el layout de escritorio queda intacto. */
+        --sat: env(safe-area-inset-top, 0px);
+        --sar: env(safe-area-inset-right, 0px);
+        --sab: env(safe-area-inset-bottom, 0px);
+        --sal: env(safe-area-inset-left, 0px);
+
+        /* Espaciado base móvil */
+        --gutter: 1.25rem;   /* 20px de aire lateral mínimo */
+        --tap: 2.75rem;      /* 44px = objetivo táctil mínimo (WCAG 2.5.5) */
+
         --reveal-offset: 0.625rem;
         --reveal-duration: 0.5s;
         --z-ui: 10;
@@ -140,6 +158,7 @@
 
       section {
         min-height: 100vh;
+        min-height: 100svh; /* evita el salto por la barra del navegador móvil */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -787,49 +806,117 @@
     }
 
     @layer responsive {
+      /* ══════════════════════════════════════════════════════════════════
+         MÓVIL VERTICAL — Sistema de bandas con zonas seguras
+         Cada módulo = exactamente 1 pantalla (100svh), repartida así:
+
+         ┌──────────────────────────────┐ ← env(safe-area-inset-top)
+         │  BANDA HUD    (sat + 3.25rem)│   % + barra de progreso
+         ├──────────────────────────────┤
+         │  BANDA CUBO   (34svh)        │   cubo 3D, centrado
+         ├──────────────────────────────┤
+         │  BANDA TARJETA (resto)       │   texto anclado abajo
+         ├──────────────────────────────┤
+         │  BANDA TÁCTIL (sab+tap+12px) │   toggle 44px, home indicator
+         └──────────────────────────────┘ ← env(safe-area-inset-bottom)
+
+         Antes: 150vh por sección → 76% de vacío y 17.5 pantallas de scroll.
+         Ahora: 100svh por sección → 12 pantallas, cero solapamiento.
+         ══════════════════════════════════════════════════════════════════ */
       @media (width <= 56.25em) {
-        #hud {
-          top: 1rem;
-          right: 1rem;
+        :root {
+          --ui-inset: var(--gutter);
+          --nav-x: var(--gutter);
+
+          /* Bandas verticales calculadas */
+          --band-top: calc(var(--sat) + 3.25rem);
+          --band-cube: 34svh;
+
+          /* Padding horizontal con recorte lateral (landscape con notch) */
+          --pad-left: calc(var(--sal) + var(--gutter));
+          --pad-right: calc(var(--sar) + var(--gutter));
+          /* Reserva inferior: home indicator + objetivo táctil del toggle */
+          --pad-bottom: calc(var(--sab) + var(--tap) + 0.75rem);
         }
 
+        /* ── Prevención de desbordamiento horizontal ───────────────────── */
+        html,
+        body {
+          overflow-x: clip;
+          max-width: 100%;
+        }
+
+        #scroll_container {
+          overflow-x: clip;
+        }
+
+        /* ── Cubo: confinado a su propia banda, ya no choca con el texto ── */
+        #scene {
+          inset: var(--band-top) 0 auto 0;
+          height: var(--band-cube);
+          align-items: center;
+        }
+
+        #cube {
+          --s: min(54vw, 26svh, 230px);
+        }
+
+        /* ── HUD dentro de la zona segura superior ─────────────────────── */
+        #hud {
+          top: calc(var(--sat) + 0.875rem);
+          right: calc(var(--sar) + var(--gutter));
+          font-size: 0.6rem;
+        }
+
+        #hud .progress-bar {
+          width: 5.5rem;
+        }
+
+        /* ── Elementos que estorban en vertical ────────────────────────── */
         #scene_strip {
           display: none;
         }
 
-        #theme_toggle {
-          bottom: 1rem;
-          left: 1.25rem;
-          translate: 0 0;
+        /* El crédito rotado -90° invadía el borde derecho de las tarjetas */
+        #credit {
+          display: none;
         }
 
+        /* Duplicaba la info que ya dan .tag y .module-number, y se solapaba */
         #face_caption {
-          bottom: 14%;
+          display: none;
         }
 
-        section {
-          min-height: 150vh;
-          align-items: flex-end;
-          padding: 0 1.5rem 3.5rem;
+        /* ── Toggle de tema: 44px táctiles + zona segura inferior ──────── */
+        #theme_toggle {
+          bottom: calc(var(--sab) + 0.75rem);
+          left: calc(var(--sal) + 0.75rem);
+          translate: 0 0;
+          width: var(--tap);
+          height: var(--tap);
         }
 
+        #theme_toggle svg {
+          width: 1.05rem;
+          height: 1.05rem;
+        }
+
+        /* ── Secciones: 1 módulo = 1 pantalla exacta ───────────────────── */
+        section,
         #s0 {
-          min-height: 100vh;
-          align-items: center;
-          padding: 4rem 1.5rem;
+          min-height: 100vh;  /* fallback navegadores sin svh */
+          min-height: 100svh;
+          align-items: flex-end;
+          padding: var(--band-top) var(--pad-right) var(--pad-bottom)
+            var(--pad-left);
         }
 
-        .text-card, .text-card.right, .text-card.center {
-          max-width: 100%;
-          padding: 1.5rem 1.25rem;
-        }
-
-        /* Móvil: el wrapper 2x2 con aspect-ratio recorta el contenido.
-           Se apila en bloque y los cuadrantes vacíos (imagen) se ocultan. */
+        /* ── Apilado vertical: el grid 2x2 se convierte en bloque ──────── */
         .module-wrapper {
           display: block;
           aspect-ratio: auto;
           overflow: visible;
+          max-width: 100%;
         }
 
         .quadrant {
@@ -837,30 +924,69 @@
           border-bottom: none;
           height: auto;
           padding: 0;
+          align-items: stretch;
         }
 
         .quadrant:empty {
           display: none;
         }
 
-        .quadrant.top-right .text-card {
+        /* ── Tarjeta de texto ──────────────────────────────────────────── */
+        .text-card,
+        .text-card.right,
+        .text-card.center {
+          max-width: 100%;
+          width: 100%;
+          margin-inline: 0;
+          padding: 1.375rem 1.25rem;
+          border-radius: 14px;
+          text-align: left;
+          overflow-wrap: break-word;
+        }
+
+        .quadrant.top-right .text-card,
+        .text-card.right,
+        .text-card.center {
           text-align: left;
         }
 
-        .quadrant.top-right .text-card .h-line {
+        .quadrant.top-right .text-card .h-line,
+        .text-card.right .h-line,
+        .text-card.center .h-line {
           margin-inline-start: 0;
+          margin-inline-end: auto;
           transform-origin: left;
         }
 
-        .module-number {
-          position: static;
-          transform: none;
-          display: block;
-          margin-block-start: 1rem;
+        .text-card.right .cta-row,
+        .text-card.center .cta-row {
+          justify-content: flex-start;
+        }
+
+        /* ── Tipografía fluida y a prueba de desbordamiento ────────────── */
+        h1,
+        h2,
+        #s0 h1 {
+          font-size: clamp(1.25rem, 5.4vw, 1.75rem);
+          line-height: 1.05;
+          overflow-wrap: anywhere;
+          hyphens: auto;
+        }
+
+        .tag {
+          font-size: 0.52rem;
+          letter-spacing: 0.22em;
+          margin-block-end: 0.75rem;
         }
 
         .body-text {
-          line-height: 1.55;
+          font-size: clamp(0.82rem, 3.5vw, 0.9rem);
+          line-height: 1.6;
+          margin-block-start: 0.875rem;
+        }
+
+        .h-line {
+          margin-block-end: 0.9rem;
         }
 
         .stat-row {
@@ -868,8 +994,88 @@
           margin-block-start: 1.25rem;
         }
 
+        .stat-num {
+          font-size: 1.75rem;
+        }
+
+        /* ── Objetivos táctiles ≥ 44px (WCAG 2.5.5) ────────────────────── */
         .cta-row {
-          margin-block-start: 1.25rem;
+          margin-block-start: 1.125rem;
+          flex-wrap: wrap;
+        }
+
+        .cta,
+        .cta-back {
+          min-height: var(--tap);
+          padding-block: 0.75rem;
+          padding-inline: 1.1rem;
+          font-size: 0.62rem;
+        }
+
+        /* ── Numeración del módulo ─────────────────────────────────────
+           Alineada a la derecha: la esquina inferior izquierda la ocupa
+           el toggle de tema (44px). Así nunca compiten. */
+        .module-number {
+          position: static;
+          transform: none;
+          display: block;
+          margin-block-start: 0.875rem;
+          text-align: right;
+          font-size: 0.62rem;
+          letter-spacing: 0.28em;
+          opacity: 0.45;
+        }
+      }
+
+      /* ── Teléfonos muy angostos (≤360px): compactar aún más ─────────── */
+      @media (width <= 22.5em) {
+        :root {
+          --gutter: 1rem;
+        }
+
+        .text-card,
+        .text-card.right,
+        .text-card.center {
+          padding: 1.25rem 1.05rem;
+        }
+
+        #cube {
+          --s: min(52vw, 24svh, 200px);
+        }
+      }
+
+      /* ── Móvil en horizontal: el cubo cede espacio al texto ─────────── */
+      @media (width <= 56.25em) and (height <= 30em) {
+        :root {
+          /* 3.5rem libra el HUD (alto ~37px) sobre la tarjeta */
+          --band-top: calc(var(--sat) + 3.5rem);
+          --band-cube: 46svh;
+        }
+
+        #cube {
+          --s: min(30vw, 40svh, 190px);
+        }
+
+        section,
+        #s0 {
+          align-items: center;
+        }
+      }
+
+      /* ── Respeto por prefers-reduced-motion ─────────────────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        .tag,
+        h1,
+        h2,
+        .body-text,
+        .stat-row,
+        .cta,
+        .cta-back,
+        .h-line {
+          transition-duration: 0.01ms !important;
+          opacity: 1 !important;
+          translate: none !important;
+          scale: 1 1 !important;
         }
       }
     }
@@ -958,6 +1164,48 @@
 
       .modal-close:hover {
         opacity: 0.7;
+      }
+
+      /* ── Modales en móvil: zonas seguras + scroll contenido ─────────── */
+      @media (width <= 56.25em) {
+        .modal {
+          padding: calc(var(--sat) + var(--gutter))
+            calc(var(--sar) + var(--gutter))
+            calc(var(--sab) + var(--gutter))
+            calc(var(--sal) + var(--gutter));
+          align-items: flex-end; /* hoja inferior: pulgar-friendly */
+        }
+
+        .modal-content {
+          width: 100%;
+          max-width: 100%;
+          max-height: 82svh;
+          padding: 1.5rem 1.25rem 1.25rem;
+          border-radius: 16px;
+          overscroll-behavior: contain; /* no arrastra el scroll de la página */
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .modal-content h2 {
+          font-size: clamp(1.15rem, 5vw, 1.5rem);
+          line-height: 1.15;
+          padding-inline-end: var(--tap); /* no queda bajo la ✕ */
+          margin-bottom: 0.875rem;
+        }
+
+        .modal-text {
+          font-size: clamp(0.82rem, 3.5vw, 0.9rem);
+          line-height: 1.65;
+          margin-bottom: 1.25rem;
+        }
+
+        .modal-close {
+          top: 0.5rem;
+          right: 0.5rem;
+          width: var(--tap);
+          height: var(--tap);
+          font-size: 1.6rem;
+        }
       }
     }
   </style>
