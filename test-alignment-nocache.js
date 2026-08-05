@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
   await page.setViewportSize(viewport);
 
   // Forzar recarga sin caché
-  await page.goto('https://www.victor-ia.com.mx?t=' + Date.now(), { waitUntil: 'networkidle' });
+  await page.goto('https://www.victor-ia.com.mx?t=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 30000 });
 
   const oddModules = [0, 2, 4, 6, 8, 10];
 
