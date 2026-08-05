@@ -181,12 +181,16 @@
         align-items: flex-start;
       }
 
-      .quadrant.top-right .text-card {
-        text-align: right;
-      }
-
       .quadrant.top-left .text-card {
         text-align: left;
+        align-self: flex-start;
+        margin-inline-end: auto;
+      }
+
+      .quadrant.top-right .text-card {
+        text-align: right;
+        align-self: flex-end;
+        margin-inline-start: auto;
       }
 
       .module-number {
