@@ -727,13 +727,31 @@
        (o el navegador no soportaba algo), el texto jamás recibía
        .visible y la página quedaba EN BLANCO.
        Ahora, sin JS = todo visible desde el primer paint. */
-    .js-anim :is(.tag, h1, h2, .body-text, .stat-row, .cta, .cta-back) {
+    /* Selectores escritos uno a uno a propósito, NO con :is(). :is() adopta
+       la especificidad de su argumento más alto (.tag = 0,1,0), así que
+       `.js-anim :is(h1)` valía 0,2,0 y le ganaba a `h1.visible` (0,1,1):
+       el texto se quedaba en opacity:0 aunque el observer sí añadiera
+       .visible. Escritos por separado empatan y gana el que va después. */
+    .js-anim .tag,
+    .js-anim h1,
+    .js-anim h2,
+    .js-anim .body-text,
+    .js-anim .stat-row,
+    .js-anim .cta,
+    .js-anim .cta-back {
       opacity: 0;
       translate: 0 var(--reveal-offset);
     }
 
     /* Interruptor de emergencia (temporizador de 4 s en el <head>) */
-    .force-visible :is(.tag, h1, h2, .body-text, .stat-row, .cta, .cta-back, .h-line) {
+    .force-visible .tag,
+    .force-visible h1,
+    .force-visible h2,
+    .force-visible .body-text,
+    .force-visible .stat-row,
+    .force-visible .cta,
+    .force-visible .cta-back,
+    .force-visible .h-line {
       opacity: 1 !important;
       translate: none !important;
       scale: 1 1 !important;
