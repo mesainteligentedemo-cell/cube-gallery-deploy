@@ -149,7 +149,7 @@
         aspect-ratio: 2 / 1;
         border: 2px solid var(--accent);
         display: grid;
-        grid-template-columns: 1fr 1.2fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         overflow: hidden;
       }
@@ -195,6 +195,12 @@
         text-align: right;
         margin-left: auto !important;
         margin-right: 0 !important;
+      }
+
+      /* Módulos nones (1, 3, 5, 7, 9, 11): Columnas asimétricas — texto más estrecho a la izq */
+      #s0 .module-wrapper, #s2 .module-wrapper, #s4 .module-wrapper,
+      #s6 .module-wrapper, #s8 .module-wrapper, #s10 .module-wrapper {
+        grid-template-columns: 0.65fr 1.35fr;
       }
 
       .module-number {
