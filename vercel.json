@@ -24,8 +24,16 @@
       "dest": "https://victor-ia-training.vercel.app/"
     },
     {
+      "src": "/training/entrevista/?$",
+      "dest": "https://victor-ia-training.vercel.app/entrevista"
+    },
+    {
       "src": "/training/(.*)",
       "dest": "https://victor-ia-training.vercel.app/$1"
+    },
+    {
+      "src": "/rrhh/?$",
+      "dest": "https://victor-ia-training.vercel.app/rrhh"
     },
     {
       "src": "/videos/(.*)",
