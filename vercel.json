@@ -20,6 +20,22 @@
   ],
   "routes": [
     {
+      "src": "/training/?$",
+      "dest": "https://victor-ia-training.vercel.app/"
+    },
+    {
+      "src": "/training/(.*)",
+      "dest": "https://victor-ia-training.vercel.app/$1"
+    },
+    {
+      "src": "/videos/(.*)",
+      "dest": "https://victor-ia-training.vercel.app/videos/$1"
+    },
+    {
+      "src": "/victor-avatar.png",
+      "dest": "https://victor-ia-training.vercel.app/victor-avatar.png"
+    },
+    {
       "src": "/.*",
       "dest": "/index.html"
     }
